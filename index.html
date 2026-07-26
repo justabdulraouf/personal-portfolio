@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abdul Raouf Al Sbeei — Writer, Tech Enthusiast & Social Media Manager</title>
+  <meta name="description" content="Personal website of Abdul Raouf Al Sbeei. Writer, Tech & AI Enthusiast, and Social Media & Community Manager. Explore work, articles, and connect.">
+  <meta name="author" content="Abdul Raouf Al Sbeei">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Abdul Raouf Al Sbeei">
+  <meta property="og:description" content="Writer, Tech Enthusiast & Social Media Manager. Micro storytelling, Apple ecosystem insights, and digital media narrative strategy.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts: Inter for UI & Bitter for editorial accents -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="site-header" id="header">
+    <div class="container header-container">
+      <a href="#hero" class="brand-logo">
+        <span class="logo-name">Abdul Raouf</span>
+        <span class="logo-dot"></span>
+      </a>
+
+      <nav class="site-nav" id="siteNav">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#work" class="nav-link">Work</a>
+        <a href="#x-spotlight" class="nav-link">X Content</a>
+        <a href="#contact" class="nav-link">Connect</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="https://docs.google.com/document/d/1L6DzmNJsPbGJrAEciTdzhq4xiafwzFqhTY9RxH2o4uc/edit?tab=t.0#heading=h.msjirqq428qj" target="_blank" rel="noopener" class="btn btn-outline btn-sm">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+          Resume
+        </a>
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle Light/Dark Theme">
+          <svg class="sun-icon icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+          <svg class="moon-icon icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+        <button id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Toggle Menu">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="pulse-dot"></span> Available for Select Roles & Strategy
+          </div>
+          <h1 class="hero-title">Abdul Raouf<br><span class="highlight">Al Sbeei</span></h1>
+          
+          <div class="hero-roles">
+            <span class="role-pill">Writer</span>
+            <span class="role-pill">Tech & AI Enthusiast</span>
+            <span class="role-pill">Social Media Manager</span>
+          </div>
+
+          <p class="hero-bio">
+            Crafting inspiring narratives, exploring emerging tech innovations, and driving digital social strategy for global brands and audiences.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#contact" class="btn btn-primary">
+              Work With Me
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+            <a href="#work" class="btn btn-secondary">Explore Work</a>
+            <a href="https://docs.google.com/document/d/1L6DzmNJsPbGJrAEciTdzhq4xiafwzFqhTY9RxH2o4uc/edit?tab=t.0#heading=h.msjirqq428qj" target="_blank" rel="noopener" class="btn btn-outline">View Resume ↗</a>
+          </div>
+        </div>
+
+        <div class="hero-image-frame">
+          <img src="assets/hero-bg.jpg" alt="Beirut coastal sea sunset" class="hero-img" loading="eager">
+          <div class="image-caption">
+            <span>Captured unfiltered on iPhone</span>
+            <span class="tag">Apple Ecosystem</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section class="section about-section" id="about">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Biography</span>
+          <h2 class="section-title">About Me</h2>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-text-col">
+            <div class="bio-card">
+              <div class="bio-icon">✍️</div>
+              <div class="bio-body">
+                <h3>Writer at Heart</h3>
+                <p>I am a <strong>Writer</strong> at heart, crafting narratives that inspire. My work spans from tweets to micro storytelling.</p>
+                <div class="quote-note">(I would never use artificial intelligence to write content)</div>
+              </div>
+            </div>
+
+            <div class="bio-card">
+              <div class="bio-icon">💡</div>
+              <div class="bio-body">
+                <h3>Tech & AI Enthusiast</h3>
+                <p>As a <strong>Tech and AI Enthusiast</strong>, I'm constantly seeking the latest innovations, immersing myself in new technologies, experimenting with them, and facilitating discussions about their potential impact on humanity.</p>
+              </div>
+            </div>
+
+            <div class="bio-card">
+              <div class="bio-icon">🌍</div>
+              <div class="bio-body">
+                <h3>Social Media & Community Manager</h3>
+                <p>In my role as <strong>Social Media & Community Manager</strong> at <a href="https://web.facebook.com/StabraqTS" target="_blank" rel="noopener" class="inline-link">Stabraq</a> I represent modern Muslims by inspiring and amplifying the voices of dreamers and changemakers globally.</p>
+              </div>
+            </div>
+
+            <div class="bio-card">
+              <div class="bio-icon">🏋️‍♂️</div>
+              <div class="bio-body">
+                <h3>Health & Personal Growth</h3>
+                <p>When not immersed in these, you'll find me at the gym, working out to become my best self and trying to be a healthier person.</p>
+                <div class="quote-note">(The world is making us sick, gotta fight that however we can)</div>
+              </div>
+            </div>
+
+            <div class="bio-card">
+              <div class="bio-icon">🍏</div>
+              <div class="bio-body">
+                <h3>Apple Ecosystem Enthusiast</h3>
+                <p>I'm an Apple ecosystem enthusiast, holding my iPhone capturing the world's beauty around telling my story with unfiltered shots.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-photo-col">
+            <div class="portrait-card">
+              <div class="portrait-wrapper">
+                <img src="assets/profile.jpg" alt="Abdul Raouf Al Sbeei" class="portrait-img">
+              </div>
+              <div class="portrait-info">
+                <h4>Abdul Raouf Al Sbeei</h4>
+                <p>Social Media & Community Manager</p>
+                <div class="portrait-tags">
+                  <span class="mini-tag">Writer</span>
+                  <span class="mini-tag">Tech Reporter</span>
+                  <span class="mini-tag">Storyteller</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- My Work Section -->
+    <section class="section work-section" id="work">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Portfolio & Experience</span>
+          <h2 class="section-title">My Work</h2>
+        </div>
+
+        <div class="work-grid">
+          <!-- Supercharged Card -->
+          <article class="work-card">
+            <div class="card-brand">
+              <img src="assets/supercharged-logo.jpg" alt="Supercharged Logo" class="brand-logo-img">
+              <div class="brand-details">
+                <h3>Supercharged</h3>
+                <span class="role-title">Former Writer & Reporter</span>
+              </div>
+            </div>
+            <p class="card-desc">
+              As a former <strong>Writer</strong> and reporter that covered breaking news about Apple and the tech world, here are samples of my work with Supercharged.
+            </p>
+            <div class="card-footer">
+              <a href="https://docs.google.com/document/d/1ajUsv1-CYogNFEHntyXEvJABJNsMu5lf/edit?usp=sharing&ouid=103629558600456827434&rtpof=true&sd=true" target="_blank" rel="noopener" class="card-link">
+                View Work Samples
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Stabraq Card -->
+          <article class="work-card">
+            <div class="card-brand">
+              <img src="assets/stabraq-logo.jpg" alt="Stabraq Logo" class="brand-logo-img">
+              <div class="brand-details">
+                <h3>Stabraq</h3>
+                <span class="role-title">Social Media Manager</span>
+              </div>
+            </div>
+            <p class="card-desc">
+              As <strong>Social Media Manager</strong> at Stabraq, I represent a modern Muslim brand, amplifying global voices of changemakers. See my work live on the timeline on Facebook, Instagram, and X, or view samples in the attached folder.
+            </p>
+            <div class="social-pills">
+              <a href="https://web.facebook.com/StabraqTS" target="_blank" rel="noopener" class="mini-social">Facebook ↗</a>
+              <a href="https://www.instagram.com/stabraqts/" target="_blank" rel="noopener" class="mini-social">Instagram ↗</a>
+              <a href="https://x.com/stabraqts" target="_blank" rel="noopener" class="mini-social">X / Twitter ↗</a>
+            </div>
+            <div class="card-footer">
+              <a href="https://docs.google.com/document/d/142trArO5OiRNPQBydtZU7jcFx2vzFIHTCvl_FOuPKmY/edit?usp=sharing" target="_blank" rel="noopener" class="card-link">
+                View Samples Folder
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Huda TV Card -->
+          <article class="work-card">
+            <div class="card-brand">
+              <img src="assets/huda-logo.jpg" alt="Huda TV Logo" class="brand-logo-img">
+              <div class="brand-details">
+                <h3>Huda TV</h3>
+                <span class="role-title">Former Social Media Manager</span>
+              </div>
+            </div>
+            <p class="card-desc">
+              As a former <strong>Social Media Manager</strong> at Huda TV, I drove the digital narrative for a leading global Islamic media network, managing high-traffic pages including the official platform for Dr. Muhammad Salah.
+            </p>
+            <div class="social-pills">
+              <a href="https://web.facebook.com/Huda.Tv" target="_blank" rel="noopener" class="mini-social">Huda TV FB ↗</a>
+              <a href="https://web.facebook.com/MSalahOfficial" target="_blank" rel="noopener" class="mini-social">Dr. Salah FB ↗</a>
+            </div>
+            <div class="card-footer">
+              <a href="https://web.facebook.com/Huda.Tv" target="_blank" rel="noopener" class="card-link">
+                View Official Network Page
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- X Content Creation Spotlight Section -->
+    <section class="section x-spotlight-section" id="x-spotlight">
+      <div class="container">
+        <div class="x-card-container">
+          <div class="x-graphic-bg">
+            <svg class="x-logo-watermark" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+          </div>
+          
+          <div class="x-content">
+            <div class="x-header">
+              <span class="badge badge-dark">Content Hub</span>
+              <h2>Writing & Media on X</h2>
+            </div>
+            <p class="x-text">
+              I create content on <strong>X</strong>, from in-depth articles on a variety of topics to engaging storytelling, tech insights, and tips. I cover the latest news and launches and share captivating photos along the way. Follow for a mix of thought-provoking posts, tech talk, and visual inspiration.
+            </p>
+            <div class="x-actions">
+              <a href="https://x.com/justabdulraouf" target="_blank" rel="noopener" class="btn btn-x">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                Check My Profile Here
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Connect / Contact Section -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Get In Touch</span>
+          <h2 class="section-title">Work with me or let's connect</h2>
+        </div>
+
+        <div class="contact-grid">
+          <!-- X Profile Contact -->
+          <a href="https://x.com/justabdulraouf" target="_blank" rel="noopener" class="contact-card">
+            <div class="contact-main-link">
+              <div class="contact-icon x-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              </div>
+              <div class="contact-details">
+                <span class="contact-label">Social Media</span>
+                <span class="contact-value">Check my X Profile</span>
+              </div>
+            </div>
+            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+          </a>
+
+          <!-- Resume Contact Link -->
+          <a href="https://docs.google.com/document/d/1L6DzmNJsPbGJrAEciTdzhq4xiafwzFqhTY9RxH2o4uc/edit?tab=t.0#heading=h.msjirqq428qj" target="_blank" rel="noopener" class="contact-card">
+            <div class="contact-main-link">
+              <div class="contact-icon resume-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+              </div>
+              <div class="contact-details">
+                <span class="contact-label">Curriculum Vitae</span>
+                <span class="contact-value">Check my Resume</span>
+              </div>
+            </div>
+            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+          </a>
+
+          <!-- Phone Contact -->
+          <div class="contact-card">
+            <a href="tel:+201128839288" class="contact-main-link">
+              <div class="contact-icon phone-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              </div>
+              <div class="contact-details">
+                <span class="contact-label">Phone / WhatsApp</span>
+                <span class="contact-value">+201128839288</span>
+              </div>
+            </a>
+            <button class="copy-btn" data-copy="+201128839288" aria-label="Copy phone number">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            </button>
+          </div>
+
+          <!-- Email Contact -->
+          <div class="contact-card">
+            <a href="mailto:abdulraouf.alsbeei@gmail.com" class="contact-main-link">
+              <div class="contact-icon email-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              </div>
+              <div class="contact-details">
+                <span class="contact-label">Direct Email</span>
+                <span class="contact-value">abdulraouf.alsbeei@gmail.com</span>
+              </div>
+            </a>
+            <button class="copy-btn" data-copy="abdulraouf.alsbeei@gmail.com" aria-label="Copy email address">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-left">
+        <span class="footer-name">Abdul Raouf Al Sbeei</span>
+        <p>© 2026. Personal Website.</p>
+      </div>
+      <div class="footer-right">
+        <a href="#hero" class="back-to-top">
+          Back to Top
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast">Copied to clipboard!</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
