@@ -3,14 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Abdul Raouf Al Sbeei — Writer, Tech Enthusiast & Social Media Manager</title>
-  <meta name="description" content="Personal website of Abdul Raouf Al Sbeei. Writer, Tech & AI Enthusiast, and Social Media & Community Manager. Explore work, articles, and connect.">
+  <title>Abdul Raouf Al Sbeei — Writer, Tech Enthusiast &amp; Social Media Manager</title>
+  <meta name="description" content="Personal website and portfolio of Abdul Raouf Al Sbeei. Writer, Tech &amp; AI Enthusiast, and Social Media &amp; Community Manager.">
   <meta name="author" content="Abdul Raouf Al Sbeei">
   
-  <!-- Open Graph -->
-  <meta property="og:title" content="Abdul Raouf Al Sbeei">
-  <meta property="og:description" content="Writer, Tech Enthusiast & Social Media Manager. Micro storytelling, Apple ecosystem insights, and digital media narrative strategy.">
+  <!-- Custom Favicon & Apple Touch Icon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" href="assets/profile.jpg">
+  
+  <!-- Open Graph / Rich Social Cards -->
+  <meta property="og:title" content="Abdul Raouf Al Sbeei — Writer, Tech Enthusiast &amp; Social Media Manager">
+  <meta property="og:description" content="Explore articles, social media work for Stabraq &amp; Supercharged, embedded interactive resume, and tech insights.">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://justabdulraouf.me">
+  <meta property="og:image" content="https://justabdulraouf.me/assets/profile.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@justabdulraouf">
+  <meta name="twitter:creator" content="@justabdulraouf">
+  <meta name="twitter:title" content="Abdul Raouf Al Sbeei — Personal Portfolio">
+  <meta name="twitter:description" content="Writer, Tech Enthusiast &amp; Social Media Manager. Explore portfolio, resume, and articles.">
+  <meta name="twitter:image" content="https://justabdulraouf.me/assets/profile.jpg">
 
   <!-- Google Fonts: Inter for UI & Bitter for editorial accents -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,7 +37,7 @@
 </head>
 <body>
 
-  <!-- Navigation -->
+  <!-- Navigation Header -->
   <header class="site-header" id="header">
     <div class="container header-container">
       <a href="#hero" class="brand-logo">
@@ -37,10 +53,10 @@
       </nav>
 
       <div class="header-actions">
-        <a href="https://docs.google.com/document/d/1L6DzmNJsPbGJrAEciTdzhq4xiafwzFqhTY9RxH2o4uc/edit?tab=t.0#heading=h.msjirqq428qj" target="_blank" rel="noopener" class="btn btn-outline btn-sm">
+        <button id="headerResumeBtn" class="btn btn-outline btn-sm" aria-label="View Embedded Resume">
           <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
-          Resume
-        </a>
+          <span>Resume</span>
+        </button>
         <button id="themeToggle" class="theme-toggle" aria-label="Toggle Light/Dark Theme">
           <svg class="sun-icon icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
           <svg class="moon-icon icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
@@ -59,13 +75,13 @@
       <div class="container">
         <div class="hero-content">
           <div class="hero-badge">
-            <span class="pulse-dot"></span> Available for Select Roles & Strategy
+            <span class="pulse-dot"></span> Available for Select Roles &amp; Strategy
           </div>
           <h1 class="hero-title">Abdul Raouf<br><span class="highlight">Al Sbeei</span></h1>
           
           <div class="hero-roles">
             <span class="role-pill">Writer</span>
-            <span class="role-pill">Tech & AI Enthusiast</span>
+            <span class="role-pill">Tech &amp; AI Enthusiast</span>
             <span class="role-pill">Social Media Manager</span>
           </div>
 
@@ -79,7 +95,10 @@
               <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
             </a>
             <a href="#work" class="btn btn-secondary">Explore Work</a>
-            <a href="https://docs.google.com/document/d/1L6DzmNJsPbGJrAEciTdzhq4xiafwzFqhTY9RxH2o4uc/edit?tab=t.0#heading=h.msjirqq428qj" target="_blank" rel="noopener" class="btn btn-outline">View Resume ↗</a>
+            <button id="heroResumeBtn" class="btn btn-outline">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+              Interactive Resume
+            </button>
           </div>
         </div>
 
@@ -93,7 +112,7 @@
       </div>
     </section>
 
-    <!-- About Me Section -->
+    <!-- About Me Section (Clean Vector Icons, No Emojis) -->
     <section class="section about-section" id="about">
       <div class="container">
         <div class="section-header">
@@ -103,45 +122,60 @@
 
         <div class="about-grid">
           <div class="about-text-col">
+            <!-- Bio Card 1: Writer -->
             <div class="bio-card">
-              <div class="bio-icon">✍️</div>
+              <div class="bio-icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+              </div>
               <div class="bio-body">
                 <h3>Writer at Heart</h3>
-                <p>I am a <strong>Writer</strong> at heart, crafting narratives that inspire. My work spans from tweets to micro storytelling.</p>
+                <p>I am a <strong>Writer</strong> at heart, crafting narratives that inspire. My work spans from articles and micro storytelling to digital brand campaigns.</p>
                 <div class="quote-note">(I would never use artificial intelligence to write content)</div>
               </div>
             </div>
 
+            <!-- Bio Card 2: Tech & AI -->
             <div class="bio-card">
-              <div class="bio-icon">💡</div>
+              <div class="bio-icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              </div>
               <div class="bio-body">
-                <h3>Tech & AI Enthusiast</h3>
-                <p>As a <strong>Tech and AI Enthusiast</strong>, I'm constantly seeking the latest innovations, immersing myself in new technologies, experimenting with them, and facilitating discussions about their potential impact on humanity.</p>
+                <h3>Tech &amp; AI Enthusiast</h3>
+                <p>As a <strong>Tech and AI Enthusiast</strong>, I'm constantly seeking the latest innovations, experimenting with new agentic tools, and facilitating discussions about tech's impact on humanity.</p>
               </div>
             </div>
 
+            <!-- Bio Card 3: Social Media Manager -->
             <div class="bio-card">
-              <div class="bio-icon">🌍</div>
+              <div class="bio-icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+              </div>
               <div class="bio-body">
-                <h3>Social Media & Community Manager</h3>
-                <p>In my role as <strong>Social Media & Community Manager</strong> at <a href="https://web.facebook.com/StabraqTS" target="_blank" rel="noopener" class="inline-link">Stabraq</a> I represent modern Muslims by inspiring and amplifying the voices of dreamers and changemakers globally.</p>
+                <h3>Social Media &amp; Community Manager</h3>
+                <p>In my role as <strong>Social Media &amp; Community Manager</strong> at <a href="https://web.facebook.com/StabraqTS" target="_blank" rel="noopener" class="inline-link">Stabraq</a> I represent modern Muslim culture by inspiring and amplifying the voices of dreamers and changemakers globally.</p>
               </div>
             </div>
 
+            <!-- Bio Card 4: Health & Fitness -->
             <div class="bio-card">
-              <div class="bio-icon">🏋️‍♂️</div>
+              <div class="bio-icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h1a4 4 0 0 1 4 4v0a4 4 0 0 1-4 4H2"></path><line x1="6" y1="12" x2="18" y2="12"></line></svg>
+              </div>
               <div class="bio-body">
-                <h3>Health & Personal Growth</h3>
-                <p>When not immersed in these, you'll find me at the gym, working out to become my best self and trying to be a healthier person.</p>
+                <h3>Health &amp; Personal Growth</h3>
+                <p>When not immersed in digital media, you'll find me at the gym, focusing on strength and building a healthy mind and body.</p>
                 <div class="quote-note">(The world is making us sick, gotta fight that however we can)</div>
               </div>
             </div>
 
+            <!-- Bio Card 5: Apple Ecosystem -->
             <div class="bio-card">
-              <div class="bio-icon">🍏</div>
+              <div class="bio-icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+              </div>
               <div class="bio-body">
                 <h3>Apple Ecosystem Enthusiast</h3>
-                <p>I'm an Apple ecosystem enthusiast, holding my iPhone capturing the world's beauty around telling my story with unfiltered shots.</p>
+                <p>An Apple ecosystem enthusiast, holding my iPhone capturing the world's beauty around me and telling stories through unfiltered lens photography.</p>
               </div>
             </div>
           </div>
@@ -153,7 +187,7 @@
               </div>
               <div class="portrait-info">
                 <h4>Abdul Raouf Al Sbeei</h4>
-                <p>Social Media & Community Manager</p>
+                <p>Social Media &amp; Community Manager</p>
                 <div class="portrait-tags">
                   <span class="mini-tag">Writer</span>
                   <span class="mini-tag">Tech Reporter</span>
@@ -170,7 +204,7 @@
     <section class="section work-section" id="work">
       <div class="container">
         <div class="section-header">
-          <span class="section-subtitle">Portfolio & Experience</span>
+          <span class="section-subtitle">Portfolio &amp; Experience</span>
           <h2 class="section-title">My Work</h2>
         </div>
 
@@ -181,14 +215,14 @@
               <img src="assets/supercharged-logo.jpg" alt="Supercharged Logo" class="brand-logo-img">
               <div class="brand-details">
                 <h3>Supercharged</h3>
-                <span class="role-title">Former Writer & Reporter</span>
+                <span class="role-title">Former Writer &amp; Reporter</span>
               </div>
             </div>
             <p class="card-desc">
-              As a former <strong>Writer</strong> and reporter that covered breaking news about Apple and the tech world, here are samples of my work with Supercharged.
+              As a former <strong>Writer</strong> and reporter covering breaking news about Apple and technology worldwide, here are selected samples of my work with Supercharged.
             </p>
             <div class="card-footer">
-              <a href="https://docs.google.com/document/d/1ajUsv1-CYogNFEHntyXEvJABJNsMu5lf/edit?usp=sharing&ouid=103629558600456827434&rtpof=true&sd=true" target="_blank" rel="noopener" class="card-link">
+              <a href="https://docs.google.com/document/d/1ajUsv1-CYogNFEHntyXEvJABJNsMu5lf/edit?usp=sharing&amp;ouid=103629558600456827434&amp;rtpof=true&amp;sd=true" target="_blank" rel="noopener" class="card-link">
                 View Work Samples
                 <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
               </a>
@@ -205,7 +239,7 @@
               </div>
             </div>
             <p class="card-desc">
-              As <strong>Social Media Manager</strong> at Stabraq, I represent a modern Muslim brand, amplifying global voices of changemakers. See my work live on the timeline on Facebook, Instagram, and X, or view samples in the attached folder.
+              As <strong>Social Media Manager</strong> at Stabraq, I represent a modern Muslim brand, amplifying global voices of changemakers. Explore my work live across social channels or in the samples archive.
             </p>
             <div class="social-pills">
               <a href="https://web.facebook.com/StabraqTS" target="_blank" rel="noopener" class="mini-social">Facebook ↗</a>
@@ -230,7 +264,7 @@
               </div>
             </div>
             <p class="card-desc">
-              As a former <strong>Social Media Manager</strong> at Huda TV, I drove the digital narrative for a leading global Islamic media network, managing high-traffic pages including the official platform for Dr. Muhammad Salah.
+              As a former <strong>Social Media Manager</strong> at Huda TV, I drove the digital narrative for a leading global Islamic media network, managing high-traffic pages including Dr. Muhammad Salah.
             </p>
             <div class="social-pills">
               <a href="https://web.facebook.com/Huda.Tv" target="_blank" rel="noopener" class="mini-social">Huda TV FB ↗</a>
@@ -247,7 +281,7 @@
       </div>
     </section>
 
-    <!-- X Content Creation Spotlight Section -->
+    <!-- X Content Creation Spotlight Section (Item 4) -->
     <section class="section x-spotlight-section" id="x-spotlight">
       <div class="container">
         <div class="x-card-container">
@@ -259,16 +293,44 @@
           
           <div class="x-content">
             <div class="x-header">
-              <span class="badge badge-dark">Content Hub</span>
-              <h2>Writing & Media on X</h2>
+              <span class="badge badge-dark">Featured Spotlight</span>
+              <h2>Writing &amp; Tech Storytelling on X</h2>
             </div>
-            <p class="x-text">
-              I create content on <strong>X</strong>, from in-depth articles on a variety of topics to engaging storytelling, tech insights, and tips. I cover the latest news and launches and share captivating photos along the way. Follow for a mix of thought-provoking posts, tech talk, and visual inspiration.
-            </p>
+            
+            <!-- Real Tweet Component Card -->
+            <div class="tweet-spotlight-card">
+              <div class="tweet-card-header">
+                <img src="assets/profile.jpg" alt="Abdul" class="tweet-avatar">
+                <div class="tweet-user-info">
+                  <div class="tweet-author-name">
+                    <span>Abdul</span>
+                    <svg class="verified-icon" viewBox="0 0 22 22" fill="currentColor"><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.969.854-1.24 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z"/></svg>
+                  </div>
+                  <span class="tweet-handle">@justabdulraouf</span>
+                </div>
+              </div>
+              <div class="tweet-text">
+                &gt; be me<br>
+                &gt; BA &amp; marketing grad<br>
+                &gt; never touched a single line of code<br>
+                &gt; discovered tpot (hell)<br>
+                &gt; subscribed to @GeminiApp AI Pro<br>
+                &gt; talked to @antigravity in english<br>
+                &gt; antigravity talked with git &amp; cloudflare<br>
+                &gt; launched my portfolio in less than 2hrs<br>
+                &gt; <span class="highlight-link">justabdulraouf.me</span>
+              </div>
+              <div class="tweet-stats">
+                <span class="stat-item"><strong>606</strong> Views</span>
+                <span class="stat-item"><strong>15</strong> Likes</span>
+                <span class="stat-item"><strong>6</strong> Replies</span>
+              </div>
+            </div>
+
             <div class="x-actions">
-              <a href="https://x.com/justabdulraouf" target="_blank" rel="noopener" class="btn btn-x">
+              <a href="https://x.com/justabdulraouf/status/2082175968433619396" target="_blank" rel="noopener" class="btn btn-x">
                 <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-                Check My Profile Here
+                View Post on X ↗
               </a>
             </div>
           </div>
@@ -299,19 +361,19 @@
             <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
           </a>
 
-          <!-- Resume Contact Link -->
-          <a href="https://docs.google.com/document/d/1L6DzmNJsPbGJrAEciTdzhq4xiafwzFqhTY9RxH2o4uc/edit?tab=t.0#heading=h.msjirqq428qj" target="_blank" rel="noopener" class="contact-card">
+          <!-- Embedded Resume Trigger Card -->
+          <button id="cardResumeBtn" class="contact-card contact-card-button" aria-label="Open Interactive Resume">
             <div class="contact-main-link">
               <div class="contact-icon resume-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
               </div>
               <div class="contact-details">
                 <span class="contact-label">Curriculum Vitae</span>
-                <span class="contact-value">Check my Resume</span>
+                <span class="contact-value">View Interactive Resume</span>
               </div>
             </div>
             <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-          </a>
+          </button>
 
           <!-- Phone Contact -->
           <div class="contact-card">
@@ -349,12 +411,130 @@
     </section>
   </main>
 
+  <!-- Embedded Interactive Resume Modal (Item 1) -->
+  <div class="resume-modal-overlay" id="resumeModalOverlay" aria-hidden="true">
+    <div class="resume-modal" role="dialog" aria-labelledby="resumeTitle">
+      <div class="resume-modal-header">
+        <div class="resume-modal-title-group">
+          <span class="badge badge-dark">Curriculum Vitae</span>
+          <h2 id="resumeTitle">Abdul Raouf Al Sbeei</h2>
+          <p class="resume-subtitle">Social Media &amp; Community Manager | Writer | Tech &amp; AI Specialist</p>
+        </div>
+        <div class="resume-modal-actions">
+          <button id="printResumeBtn" class="btn btn-secondary btn-sm" aria-label="Print / Export Resume">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+            Print / PDF
+          </button>
+          <button id="closeResumeBtn" class="close-modal-btn" aria-label="Close Resume Modal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="resume-modal-body">
+        <!-- Resume Summary -->
+        <div class="resume-section">
+          <h3 class="resume-section-title">Professional Summary</h3>
+          <p class="resume-text">
+            Dynamic <strong>Social Media &amp; Community Manager</strong> and published <strong>Tech Writer</strong> with a Bachelor of Arts in Marketing. Proven track record in amplifying brand identity, managing global high-traffic media channels (Stabraq, Huda TV, Supercharged), and crafting engaging narrative content. Passionate about artificial intelligence, human-centered storytelling, and Apple ecosystem tech reporting.
+          </p>
+        </div>
+
+        <!-- Core Competencies -->
+        <div class="resume-section">
+          <h3 class="resume-section-title">Core Competencies</h3>
+          <div class="resume-skills-grid">
+            <span class="skill-badge">Social Media Strategy</span>
+            <span class="skill-badge">Community Management</span>
+            <span class="skill-badge">Narrative &amp; Copywriting</span>
+            <span class="skill-badge">Tech &amp; AI Reporting</span>
+            <span class="skill-badge">Apple Ecosystem Journalism</span>
+            <span class="skill-badge">Brand Identity &amp; Voice</span>
+            <span class="skill-badge">Digital Content Curation</span>
+            <span class="skill-badge">Audience Analytics &amp; Engagement</span>
+          </div>
+        </div>
+
+        <!-- Professional Experience -->
+        <div class="resume-section">
+          <h3 class="resume-section-title">Professional Experience</h3>
+
+          <!-- Experience Item 1 -->
+          <div class="experience-card">
+            <div class="exp-header">
+              <div class="exp-role-group">
+                <h4>Social Media &amp; Community Manager</h4>
+                <span class="exp-company">Stabraq</span>
+              </div>
+              <span class="exp-period">Present</span>
+            </div>
+            <ul class="exp-bullet-list">
+              <li>Lead digital social media strategy and community engagement representing modern Muslim lifestyle and values.</li>
+              <li>Amplify the voices of global changemakers and dreamers through engaging micro storytelling across Facebook, Instagram, and X.</li>
+              <li>Manage digital content calendar, visual assets, and community interactions driving high engagement rates.</li>
+            </ul>
+          </div>
+
+          <!-- Experience Item 2 -->
+          <div class="experience-card">
+            <div class="exp-header">
+              <div class="exp-role-group">
+                <h4>Former Writer &amp; Reporter</h4>
+                <span class="exp-company">Supercharged</span>
+              </div>
+              <span class="exp-period">Former</span>
+            </div>
+            <ul class="exp-bullet-list">
+              <li>Authored breaking news, in-depth reports, and technical articles covering Apple releases, software updates, and hardware innovations.</li>
+              <li>Delivered timely, accurate tech journalism for a dedicated global reader base.</li>
+            </ul>
+          </div>
+
+          <!-- Experience Item 3 -->
+          <div class="experience-card">
+            <div class="exp-header">
+              <div class="exp-role-group">
+                <h4>Former Social Media Manager</h4>
+                <span class="exp-company">Huda TV &amp; Dr. Muhammad Salah</span>
+              </div>
+              <span class="exp-period">Former</span>
+            </div>
+            <ul class="exp-bullet-list">
+              <li>Managed social media operations for Huda TV, a leading global Islamic satellite network.</li>
+              <li>Directed official digital channels for Dr. Muhammad Salah, optimizing post reach, video distribution, and follower interaction.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Education -->
+        <div class="resume-section">
+          <h3 class="resume-section-title">Education</h3>
+          <div class="experience-card">
+            <div class="exp-header">
+              <div class="exp-role-group">
+                <h4>Bachelor of Arts (BA) in Marketing &amp; Business Administration</h4>
+                <span class="exp-company">University Graduate</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="resume-modal-footer">
+        <button class="btn btn-primary btn-sm copy-btn" data-copy="abdulraouf.alsbeei@gmail.com">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          Copy Email Address
+        </button>
+      </div>
+    </div>
+  </div>
+
   <!-- Footer -->
   <footer class="site-footer">
     <div class="container footer-container">
       <div class="footer-left">
         <span class="footer-name">Abdul Raouf Al Sbeei</span>
-        <p>© 2026. Personal Website.</p>
+        <p>© 2026. Personal Portfolio.</p>
       </div>
       <div class="footer-right">
         <a href="#hero" class="back-to-top">
@@ -365,8 +545,11 @@
     </div>
   </footer>
 
-  <!-- Toast Notification -->
-  <div class="toast" id="toast">Copied to clipboard!</div>
+  <!-- Toast Notification (Item 3) -->
+  <div class="toast" id="toast">
+    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+    <span id="toastText">Copied to clipboard!</span>
+  </div>
 
   <script src="script.js"></script>
 </body>
