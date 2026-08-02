@@ -989,6 +989,32 @@ img {
   color: var(--text-secondary);
 }
 
+.resume-contact-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.contact-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  padding: 0.25rem 0.65rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+}
+
+.contact-pill svg {
+  width: 14px;
+  height: 14px;
+  color: var(--accent);
+}
+
 .resume-modal-actions {
   display: flex;
   align-items: center;
