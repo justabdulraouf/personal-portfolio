@@ -935,7 +935,7 @@ img {
 }
 
 /* ==========================================================================
-   Embedded Interactive Resume Modal (Clean Layout & Button Fix)
+   Embedded Interactive Resume Modal (Clean Layout & Explicit Button Fix)
    ========================================================================== */
 
 .resume-modal-overlay {
@@ -1003,42 +1003,45 @@ img {
   color: var(--text-secondary);
 }
 
+/* Fixed Resume Contact Bar Pills */
 .resume-contact-bar {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  padding-bottom: 1.25rem;
-  border-bottom: 1px solid var(--border-subtle);
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 0.75rem !important;
+  padding-bottom: 1.25rem !important;
+  margin-bottom: 0.5rem !important;
+  border-bottom: 1px solid var(--border-subtle) !important;
 }
 
 .contact-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  font-size: 0.85rem;
-  font-weight: 500;
-  padding: 0.45rem 0.9rem;
-  background: var(--bg-surface);
-  border: 1px solid var(--border-strong);
-  border-radius: var(--radius-full);
-  color: var(--text-primary);
-  white-space: nowrap;
-  box-shadow: var(--shadow-sm);
-  transition: all var(--transition-fast);
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  font-size: 0.85rem !important;
+  font-weight: 500 !important;
+  padding: 0.45rem 0.95rem !important;
+  background: var(--bg-surface) !important;
+  border: 1px solid var(--border-strong) !important;
+  border-radius: 9999px !important;
+  color: var(--text-primary) !important;
+  white-space: nowrap !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08) !important;
+  transition: all var(--transition-fast) !important;
+  text-decoration: none !important;
 }
 
 .contact-pill:hover {
-  color: var(--accent);
-  border-color: var(--accent);
-  background: var(--bg-surface-hover);
-  transform: translateY(-1px);
+  color: var(--accent) !important;
+  border-color: var(--accent) !important;
+  background: var(--bg-surface-hover) !important;
+  transform: translateY(-1px) !important;
 }
 
 .contact-pill svg {
-  width: 15px;
-  height: 15px;
-  color: var(--accent);
-  flex-shrink: 0;
+  width: 15px !important;
+  height: 15px !important;
+  color: var(--accent) !important;
+  flex-shrink: 0 !important;
 }
 
 .resume-modal-actions {
@@ -1178,26 +1181,29 @@ img {
   justify-content: flex-end;
 }
 
-/* Fix for Copy Email Address button in Resume Footer */
-.resume-modal-footer .copy-btn {
+/* Explicit Button Fix for Resume Modal Footer */
+.resume-footer-copy-btn {
   width: auto !important;
   height: auto !important;
-  padding: 0.65rem 1.4rem !important;
+  padding: 0.7rem 1.5rem !important;
   border-radius: var(--radius-md) !important;
   background: var(--text-primary) !important;
   color: var(--bg-body) !important;
-  font-size: 0.9rem !important;
+  font-size: 0.92rem !important;
   font-weight: 600 !important;
   display: inline-flex !important;
   align-items: center !important;
-  gap: 0.5rem !important;
+  justify-content: center !important;
+  gap: 0.6rem !important;
   border: none !important;
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-sm) !important;
+  cursor: pointer !important;
+  white-space: nowrap !important;
 }
 
-.resume-modal-footer .copy-btn:hover {
-  opacity: 0.9;
-  transform: translateY(-1px);
+.resume-footer-copy-btn:hover {
+  opacity: 0.9 !important;
+  transform: translateY(-1px) !important;
 }
 
 /* ==========================================================================
