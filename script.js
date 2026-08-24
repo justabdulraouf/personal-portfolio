@@ -117,6 +117,108 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 3000);
   }
 
+  // Dynamic Tweet Rotation System
+  const tweets = [
+    {
+      text: `&gt; be me<br>&gt; BA &amp; marketing grad<br>&gt; never touched a single line of code<br>&gt; discovered tpot (hell)<br>&gt; subscribed to @GeminiApp AI Pro<br>&gt; talked to @antigravity in english<br>&gt; antigravity talked with git &amp; cloudflare<br>&gt; launched my portfolio in less than 2hrs<br>&gt; <span class="highlight-link">justabdulraouf.me</span>`,
+      views: '606',
+      likes: '15',
+      replies: '6',
+      url: 'https://x.com/justabdulraouf/status/2082175968433619396'
+    },
+    {
+      text: `I am a writer at heart, crafting narratives that inspire. From tweets to micro-storytelling.<br><br>One non-negotiable principle: <strong>I would never use artificial intelligence to write content</strong>. The soul of storytelling belongs to human experience.`,
+      views: '840',
+      likes: '28',
+      replies: '9',
+      url: 'https://x.com/justabdulraouf'
+    },
+    {
+      text: `When not immersed in writing or tech, you’ll find me at the gym working out to become my best self.<br><br>The world is making us sick and sedentary — gotta fight that however we can. 🏋️‍♂️`,
+      views: '725',
+      likes: '24',
+      replies: '7',
+      url: 'https://x.com/justabdulraouf'
+    },
+    {
+      text: `Constantly seeking the latest innovations, experimenting with emerging AI models, and facilitating discussions about their potential impact on humanity.<br><br>Curiosity &gt; passive observation.`,
+      views: '910',
+      likes: '33',
+      replies: '11',
+      url: 'https://x.com/justabdulraouf'
+    },
+    {
+      text: `I’m an Apple ecosystem enthusiast. Holding my iPhone, capturing the world’s beauty around and telling my story with raw, unfiltered shots. 📸<br><br>Simplicity in design is the ultimate sophistication.`,
+      views: '590',
+      likes: '21',
+      replies: '5',
+      url: 'https://x.com/justabdulraouf'
+    },
+    {
+      text: `In my role as Social Media &amp; Community Manager at @stabraqts, I represent modern Muslims by inspiring and amplifying the voices of dreamers and changemakers globally.`,
+      views: '1.2K',
+      likes: '48',
+      replies: '15',
+      url: 'https://x.com/justabdulraouf'
+    }
+  ];
+
+  const tweetTextEl = document.getElementById('tweetText');
+  const tweetViewsEl = document.getElementById('tweetViews');
+  const tweetLikesEl = document.getElementById('tweetLikes');
+  const tweetRepliesEl = document.getElementById('tweetReplies');
+  const tweetActionBtn = document.getElementById('tweetActionBtn');
+  const tweetShuffleBtn = document.getElementById('tweetShuffleBtn');
+  const tweetSpotlightCard = document.getElementById('tweetSpotlightCard');
+
+  let currentTweetIndex = 0;
+
+  function applyTweetData(tweet) {
+    if (tweetTextEl) tweetTextEl.innerHTML = tweet.text;
+    if (tweetViewsEl) tweetViewsEl.textContent = tweet.views;
+    if (tweetLikesEl) tweetLikesEl.textContent = tweet.likes;
+    if (tweetRepliesEl) tweetRepliesEl.textContent = tweet.replies;
+    if (tweetActionBtn) tweetActionBtn.setAttribute('href', tweet.url);
+  }
+
+  function renderTweet(index, animate = false) {
+    const tweet = tweets[index];
+    if (!tweet) return;
+
+    if (animate && tweetSpotlightCard) {
+      tweetSpotlightCard.style.opacity = '0.3';
+      tweetSpotlightCard.style.transform = 'translateY(4px)';
+      setTimeout(() => {
+        applyTweetData(tweet);
+        tweetSpotlightCard.style.opacity = '1';
+        tweetSpotlightCard.style.transform = 'translateY(0)';
+      }, 150);
+    } else {
+      applyTweetData(tweet);
+    }
+  }
+
+  // Pick a fresh tweet on each visit/reload (different from previous)
+  const lastIndex = localStorage.getItem('last_tweet_index');
+  let nextIndex = 0;
+  if (lastIndex !== null) {
+    nextIndex = (parseInt(lastIndex, 10) + 1) % tweets.length;
+  } else {
+    nextIndex = Math.floor(Math.random() * tweets.length);
+  }
+
+  currentTweetIndex = nextIndex;
+  localStorage.setItem('last_tweet_index', nextIndex.toString());
+  renderTweet(currentTweetIndex, false);
+
+  if (tweetShuffleBtn) {
+    tweetShuffleBtn.addEventListener('click', () => {
+      currentTweetIndex = (currentTweetIndex + 1) % tweets.length;
+      localStorage.setItem('last_tweet_index', currentTweetIndex.toString());
+      renderTweet(currentTweetIndex, true);
+    });
+  }
+
   // Active Navigation Scroll Observer
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-link');
@@ -143,3 +245,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
   sections.forEach(section => observer.observe(section));
 });
+
