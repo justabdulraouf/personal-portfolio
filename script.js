@@ -27,6 +27,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Dynamic OS System Theme Listener
+  const systemThemeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+  systemThemeMediaQuery.addEventListener('change', (e) => {
+    if (!localStorage.getItem('theme')) {
+      const newSystemTheme = e.matches ? 'dark' : 'light';
+      html.setAttribute('data-theme', newSystemTheme);
+      setTimeout(() => {
+        if (window.twttr && window.twttr.widgets) {
+          window.twttr.widgets.load();
+        }
+      }, 100);
+    }
+  });
+
   // Mobile Navigation Menu Toggle
   const mobileMenuBtn = document.getElementById('mobileMenuBtn');
   const siteNav = document.getElementById('siteNav');
