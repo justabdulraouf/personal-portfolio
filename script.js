@@ -49,13 +49,34 @@ document.addEventListener('DOMContentLoaded', () => {
     mobileMenuBtn.addEventListener('click', () => {
       siteNav.classList.toggle('active');
     });
-
-    siteNav.querySelectorAll('.nav-link').forEach(link => {
-      link.addEventListener('click', () => {
-        siteNav.classList.remove('active');
-      });
-    });
   }
+
+  // Smooth scroll navigation with pixel-perfect header offset
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const targetId = this.getAttribute('href');
+      if (!targetId || targetId === '#') return;
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        e.preventDefault();
+        if (siteNav && siteNav.classList.contains('active')) {
+          siteNav.classList.remove('active');
+        }
+        const header = document.getElementById('header');
+        const headerHeight = header ? header.getBoundingClientRect().height : 72;
+        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+        
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+
+        if (history.pushState) {
+          history.pushState(null, null, targetId);
+        }
+      }
+    });
+  });
 
   // Embedded Resume Modal Interactivity
   const resumeModalOverlay = document.getElementById('resumeModalOverlay');

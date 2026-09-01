@@ -82,7 +82,6 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 90px;
   font-size: 16px;
   overflow-x: hidden;
   max-width: 100%;
@@ -446,14 +445,14 @@ img {
    ========================================================================== */
 
 .section {
-  padding: 90px 0;
+  padding: 80px 0;
   border-top: 1px solid var(--border-subtle);
-  scroll-margin-top: 85px;
+  scroll-margin-top: 72px;
 }
 
 section[id],
 .hero-section {
-  scroll-margin-top: 85px;
+  scroll-margin-top: 72px;
 }
 
 .section-header {
