@@ -49,7 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const heroResumeBtn = document.getElementById('heroResumeBtn');
   const cardResumeBtn = document.getElementById('cardResumeBtn');
   const closeResumeBtn = document.getElementById('closeResumeBtn');
-  const printResumeBtn = document.getElementById('printResumeBtn');
 
   function openResumeModal() {
     if (resumeModalOverlay) {
