@@ -84,6 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const heroResumeBtn = document.getElementById('heroResumeBtn');
   const cardResumeBtn = document.getElementById('cardResumeBtn');
   const closeResumeBtn = document.getElementById('closeResumeBtn');
+  const printResumeBtn = document.getElementById('printResumeBtn');
 
   function openResumeModal() {
     if (resumeModalOverlay) {
@@ -183,4 +184,15 @@ document.addEventListener('DOMContentLoaded', () => {
   }, observerOptions);
 
   sections.forEach(section => observer.observe(section));
+
+  // Initialize and load Twitter / X widget
+  if (window.twttr && window.twttr.widgets) {
+    window.twttr.widgets.load();
+  } else {
+    window.addEventListener('load', () => {
+      if (window.twttr && window.twttr.widgets) {
+        window.twttr.widgets.load();
+      }
+    });
+  }
 });
