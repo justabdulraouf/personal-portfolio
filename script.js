@@ -97,7 +97,11 @@
       event.preventDefault();
       closeMenu();
       const offset = header ? header.getBoundingClientRect().height : 64;
-      const top = target.getBoundingClientRect().top + window.scrollY - offset;
+      const resumeNavEl = document.querySelector(".resume-nav");
+      const resumeBar = resumeNavEl && window.innerWidth <= 860
+        ? resumeNavEl.getBoundingClientRect().height + 8
+        : 0;
+      const top = target.getBoundingClientRect().top + window.scrollY - offset - resumeBar;
       window.scrollTo({ top, behavior: reduced() ? "auto" : "smooth" });
       if (history.pushState) history.pushState(null, "", id);
     });
@@ -160,21 +164,45 @@
       event.preventDefault();
       const value = btn.getAttribute("data-copy");
       if (!value) return;
+      const label = btn.querySelector(".copy-label") || btn;
       try {
         await navigator.clipboard.writeText(value);
-        const original = btn.textContent;
+        const original = label.textContent;
         btn.classList.add("is-copied");
-        if (btn.tagName === "BUTTON") btn.textContent = "Copied";
+        if (btn.tagName === "BUTTON") label.textContent = "Copied";
         showToast(`Copied “${value}” to clipboard!`);
         setTimeout(() => {
           btn.classList.remove("is-copied");
-          if (btn.tagName === "BUTTON" && original) btn.textContent = original;
+          if (btn.tagName === "BUTTON" && original) label.textContent = original;
         }, 1600);
       } catch (error) {
         showToast("Could not copy. Please try again.");
       }
     });
   });
+
+  const resumeNav = document.querySelector(".resume-nav");
+  if (resumeNav && "IntersectionObserver" in window) {
+    const resumeLinks = resumeNav.querySelectorAll('a[href^="#"]');
+    const resumeTargets = [...resumeLinks]
+      .map((link) => document.querySelector(link.getAttribute("href")))
+      .filter(Boolean);
+    if (resumeTargets.length) {
+      const resumeObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            const id = entry.target.getAttribute("id");
+            resumeLinks.forEach((link) => {
+              link.classList.toggle("is-active", link.getAttribute("href") === `#${id}`);
+            });
+          });
+        },
+        { rootMargin: "-30% 0px -60% 0px", threshold: 0 }
+      );
+      resumeTargets.forEach((section) => resumeObserver.observe(section));
+    }
+  }
 
   /* Cursor + magnetic + tilt */
   const cursorRoot = document.querySelector(".cursor");

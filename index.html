@@ -29,13 +29,14 @@
   <meta name="twitter:image" content="https://justabdulraouf.me/assets/profile.jpg">
 
   <link rel="preload" as="image" href="assets/hero-bg.jpg" fetchpriority="high">
+  <link rel="preconnect" href="https://pbs.twimg.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300..700;1,14..32,300..700&amp;display=swap" rel="stylesheet">
   <script>
     document.documentElement.classList.add("js-ready");
   </script>
-  <link rel="stylesheet" href="styles.css?v=2.1.5">
+  <link rel="stylesheet" href="styles.css?v=2.2.0">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -221,54 +222,159 @@
 
     <section class="section" id="x-spotlight">
       <div class="shell">
-        <header class="section-head reveal">
-          <p class="eyebrow">Connect with me on X</p>
-          <h2>Health, tech, and some random thoughts :)</h2>
+        <header class="section-head x-head reveal">
+          <div class="x-head-copy">
+            <p class="eyebrow">Connect with me on X</p>
+            <h2 class="x-title">Health, tech, and some random thoughts :)</h2>
+          </div>
+          <div class="x-head-actions">
+            <a class="btn btn-solid" href="https://x.com/justabdulraouf" target="_blank" rel="noopener noreferrer" data-magnetic>
+              <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.727-8.835L2.086 2.25H8.08l4.253 5.622L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              Follow on X
+            </a>
+            <p class="x-follow-meta"><a href="https://x.com/justabdulraouf" target="_blank" rel="noopener noreferrer">@justabdulraouf</a> · 4,530 followers</p>
+          </div>
         </header>
-        <div class="embed-frame reveal">
-          <blockquote class="twitter-tweet" data-theme="dark" data-dnt="true" data-align="left">
-            <p lang="en" dir="ltr">i don’t think i’ll ever be the kind of person who cope from reality with jokes and by being funny, or even be the kind of poster who keep others entertained all the time, maybe i’m too serious for that? well, i always appreciate a good laugh and it get me out of the mood. or…</p>
-            &mdash; Abdul (@justabdulraouf) <a href="https://twitter.com/justabdulraouf/status/2076716952622621158?ref_src=twsrc%5Etfw">July 13, 2026</a>
-          </blockquote>
+
+        <!-- Post data fetched from the public X API on 20 Nov 2026 (Africa/Cairo) and hardcoded. Do not invent text, dates, or counts. -->
+        <div class="x-feed">
+          <article class="x-card x-card--featured reveal">
+            <a class="x-card-link" href="https://x.com/justabdulraouf/status/2076716952622621158" target="_blank" rel="noopener noreferrer">
+              <header class="x-card-head">
+                <img class="x-avatar" src="https://pbs.twimg.com/profile_images/2111119246872727552/Fu_vniww_400x400.jpg" alt="" width="48" height="48" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+                <div class="x-identity">
+                  <p class="x-name">
+                    abdul
+                    <svg class="x-verified" width="18" height="18" viewBox="0 0 24 24" role="img" aria-label="Verified account"><title>Verified account</title><path fill="currentColor" d="M22.25 12c0-1.43-.88-2.67-2.19-3.34.46-1.39.2-2.9-.81-3.91s-2.52-1.27-3.91-.81c-.66-1.31-1.91-2.19-3.34-2.19s-2.67.88-3.33 2.19c-1.4-.46-2.91-.2-3.92.81s-1.26 2.52-.8 3.91c-1.31.67-2.2 1.91-2.2 3.34s.89 2.67 2.2 3.34c-.46 1.39-.21 2.9.8 3.91s2.52 1.26 3.91.81c.67 1.31 1.91 2.19 3.34 2.19s2.68-.88 3.34-2.19c1.39.45 2.9.2 3.91-.81s1.27-2.52.81-3.91c1.31-.67 2.19-1.91 2.19-3.34zm-11.71 4.2L6.8 12.46l1.41-1.42 2.26 2.26 4.8-5.23 1.47 1.36-6.2 6.77z"/></svg>
+                  </p>
+                  <p class="x-handle">@justabdulraouf</p>
+                </div>
+                <time class="x-date" datetime="2026-07-13T17:14:39.000Z">July 13, 2026</time>
+              </header>
+              <p class="x-text">i don’t think i’ll ever be the kind of person who cope from reality with jokes and by being funny, or even be the kind of poster who keep others entertained all the time, maybe i’m too serious for that? well, i always appreciate a good laugh and it get me out of the mood. or maybe i’m extra introvert i don’t find myself in funny situations that i can reflect on others? or i’m just boring. idk. i’ve tried many times to break out of my bubbles but i just can’t. it doesn’t feel like me. and probably never will. who knows maybe if the right person came to my life things would change, but until then… this is Abdul.</p>
+              <footer class="x-metrics">
+                <span><svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M20.8 12.1C19.4 16 12 21 12 21S4.6 16 3.2 12.1A5.1 5.1 0 0 1 12 6.4a5.1 5.1 0 0 1 8.8 5.7Z"/></svg>28 <abbr title="Likes">likes</abbr></span>
+                <span><svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M21 12a8.5 8.5 0 0 1-12.4 7.6L3 21l1.5-5.2A8.5 8.5 0 1 1 21 12Z"/></svg>8 <abbr title="Replies">replies</abbr></span>
+                <span><svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="2.6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>974 <abbr title="Views">views</abbr></span>
+              </footer>
+            </a>
+          </article>
+
+          <article class="x-card reveal">
+            <a class="x-card-link" href="https://x.com/justabdulraouf/status/2123739991536812527" target="_blank" rel="noopener noreferrer">
+              <header class="x-card-head">
+                <img class="x-avatar" src="https://pbs.twimg.com/profile_images/2111119246872727552/Fu_vniww_400x400.jpg" alt="" width="48" height="48" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+                <div class="x-identity">
+                  <p class="x-name">
+                    abdul
+                    <svg class="x-verified" width="18" height="18" viewBox="0 0 24 24" role="img" aria-label="Verified account"><title>Verified account</title><path fill="currentColor" d="M22.25 12c0-1.43-.88-2.67-2.19-3.34.46-1.39.2-2.9-.81-3.91s-2.52-1.27-3.91-.81c-.66-1.31-1.91-2.19-3.34-2.19s-2.67.88-3.33 2.19c-1.4-.46-2.91-.2-3.92.81s-1.26 2.52-.8 3.91c-1.31.67-2.2 1.91-2.2 3.34s.89 2.67 2.2 3.34c-.46 1.39-.21 2.9.8 3.91s2.52 1.26 3.91.81c.67 1.31 1.91 2.19 3.34 2.19s2.68-.88 3.34-2.19c1.39.45 2.9.2 3.91-.81s1.27-2.52.81-3.91c1.31-.67 2.19-1.91 2.19-3.34zm-11.71 4.2L6.8 12.46l1.41-1.42 2.26 2.26 4.8-5.23 1.47 1.36-6.2 6.77z"/></svg>
+                  </p>
+                  <p class="x-handle">@justabdulraouf</p>
+                </div>
+                <time class="x-date" datetime="2026-11-20T11:27:25.000Z">November 20, 2026</time>
+              </header>
+              <p class="x-text">just upgraded to X Premium and so excited to unleash Grok Bot</p>
+              <footer class="x-metrics">
+                <span><svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M20.8 12.1C19.4 16 12 21 12 21S4.6 16 3.2 12.1A5.1 5.1 0 0 1 12 6.4a5.1 5.1 0 0 1 8.8 5.7Z"/></svg>12 <abbr title="Likes">likes</abbr></span>
+                <span><svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M21 12a8.5 8.5 0 0 1-12.4 7.6L3 21l1.5-5.2A8.5 8.5 0 1 1 21 12Z"/></svg>3 <abbr title="Replies">replies</abbr></span>
+                <span><svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="2.6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>163 <abbr title="Views">views</abbr></span>
+              </footer>
+            </a>
+          </article>
+
+          <article class="x-card reveal">
+            <a class="x-card-link" href="https://x.com/justabdulraouf/status/2123353771086696826" target="_blank" rel="noopener noreferrer">
+              <header class="x-card-head">
+                <img class="x-avatar" src="https://pbs.twimg.com/profile_images/2111119246872727552/Fu_vniww_400x400.jpg" alt="" width="48" height="48" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+                <div class="x-identity">
+                  <p class="x-name">
+                    abdul
+                    <svg class="x-verified" width="18" height="18" viewBox="0 0 24 24" role="img" aria-label="Verified account"><title>Verified account</title><path fill="currentColor" d="M22.25 12c0-1.43-.88-2.67-2.19-3.34.46-1.39.2-2.9-.81-3.91s-2.52-1.27-3.91-.81c-.66-1.31-1.91-2.19-3.34-2.19s-2.67.88-3.33 2.19c-1.4-.46-2.91-.2-3.92.81s-1.26 2.52-.8 3.91c-1.31.67-2.2 1.91-2.2 3.34s.89 2.67 2.2 3.34c-.46 1.39-.21 2.9.8 3.91s2.52 1.26 3.91.81c.67 1.31 1.91 2.19 3.34 2.19s2.68-.88 3.34-2.19c1.39.45 2.9.2 3.91-.81s1.27-2.52.81-3.91c1.31-.67 2.19-1.91 2.19-3.34zm-11.71 4.2L6.8 12.46l1.41-1.42 2.26 2.26 4.8-5.23 1.47 1.36-6.2 6.77z"/></svg>
+                  </p>
+                  <p class="x-handle">@justabdulraouf</p>
+                </div>
+                <time class="x-date" datetime="2026-11-19T09:52:43.000Z">November 19, 2026</time>
+              </header>
+              <p class="x-text">day 316 of my health and fitness journey</p>
+              <footer class="x-metrics">
+                <span><svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M20.8 12.1C19.4 16 12 21 12 21S4.6 16 3.2 12.1A5.1 5.1 0 0 1 12 6.4a5.1 5.1 0 0 1 8.8 5.7Z"/></svg>15 <abbr title="Likes">likes</abbr></span>
+                <span><svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M21 12a8.5 8.5 0 0 1-12.4 7.6L3 21l1.5-5.2A8.5 8.5 0 1 1 21 12Z"/></svg>2 <abbr title="Replies">replies</abbr></span>
+                <span><svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="2.6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>526 <abbr title="Views">views</abbr></span>
+              </footer>
+            </a>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="section" id="contact">
+    <section class="section contact-section" id="contact">
       <div class="shell">
-        <header class="section-head reveal">
+        <header class="close-cta reveal">
           <p class="eyebrow">Get In Touch</p>
-          <h2>Work with me or let's connect</h2>
+          <h2 class="display close-display">
+            <span class="display-line"><span>Work with me</span></span>
+            <span class="display-line"><span>or let’s connect</span></span>
+          </h2>
+          <div class="close-actions">
+            <a class="btn btn-solid" href="mailto:AbdulRaouf.alsbeei@gmail.com" data-magnetic>Email me</a>
+            <button type="button" class="btn btn-ghost copy-btn" data-copy="AbdulRaouf.alsbeei@gmail.com" aria-label="Copy email address"><span class="copy-label">Copy email</span></button>
+          </div>
         </header>
         <ul class="contact-list">
           <li class="reveal">
-            <a class="contact-row" href="https://x.com/justabdulraouf" target="_blank" rel="noopener noreferrer">
-              <span class="contact-label">Social Media</span>
-              <span class="contact-value">Check my X Profile</span>
-            </a>
-          </li>
-          <li class="reveal">
-            <a class="contact-row" href="resume.html">
-              <span class="contact-label">Resume</span>
-              <span class="contact-value">View Interactive Resume</span>
-            </a>
-          </li>
-          <li class="reveal">
             <div class="contact-row">
-              <a href="tel:+201128839288">
-                <span class="contact-label">Phone / WhatsApp</span>
-                <span class="contact-value">+201128839288</span>
+              <a href="mailto:AbdulRaouf.alsbeei@gmail.com">
+                <span class="contact-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M3 6.75A1.75 1.75 0 0 1 4.75 5h14.5A1.75 1.75 0 0 1 21 6.75v10.5A1.75 1.75 0 0 1 19.25 19H4.75A1.75 1.75 0 0 1 3 17.25Z"/><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="m4 7 8 6 8-6"/></svg>
+                </span>
+                <span class="contact-copy">
+                  <span class="contact-label">Email</span>
+                  <span class="contact-value">AbdulRaouf.alsbeei@gmail.com</span>
+                </span>
               </a>
-              <button type="button" class="copy-btn" data-copy="+201128839288" aria-label="Copy phone number">Copy</button>
+              <button type="button" class="copy-btn" data-copy="AbdulRaouf.alsbeei@gmail.com" aria-label="Copy email address"><span class="copy-label">Copy</span></button>
             </div>
           </li>
           <li class="reveal">
             <div class="contact-row">
-              <a href="mailto:AbdulRaouf.alsbeei@gmail.com">
-                <span class="contact-label">Direct Email</span>
-                <span class="contact-value">AbdulRaouf.alsbeei@gmail.com</span>
+              <a href="tel:+201128839288">
+                <span class="contact-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M7.2 3.8h3.1l1.3 3.2-1.7 1.2a12.4 12.4 0 0 0 6.9 6.9l1.2-1.7 3.2 1.3v3.1c0 .7-.6 1.4-1.4 1.4C10.4 19.2 4.8 13.6 4.8 5.2c0-.8.7-1.4 1.4-1.4Z"/></svg>
+                </span>
+                <span class="contact-copy">
+                  <span class="contact-label">Phone / WhatsApp</span>
+                  <span class="contact-value">+201128839288</span>
+                </span>
               </a>
-              <button type="button" class="copy-btn" data-copy="AbdulRaouf.alsbeei@gmail.com" aria-label="Copy email address">Copy</button>
+              <button type="button" class="copy-btn" data-copy="+201128839288" aria-label="Copy phone number"><span class="copy-label">Copy</span></button>
+            </div>
+          </li>
+          <li class="reveal">
+            <div class="contact-row">
+              <a href="https://x.com/justabdulraouf" target="_blank" rel="noopener noreferrer">
+                <span class="contact-icon" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.727-8.835L2.086 2.25H8.08l4.253 5.622L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                </span>
+                <span class="contact-copy">
+                  <span class="contact-label">Social Media</span>
+                  <span class="contact-value">@justabdulraouf</span>
+                </span>
+              </a>
+              <a class="contact-go" href="https://x.com/justabdulraouf" target="_blank" rel="noopener noreferrer" aria-label="Open X profile">Open</a>
+            </div>
+          </li>
+          <li class="reveal">
+            <div class="contact-row">
+              <a href="resume.html">
+                <span class="contact-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M7 3.75h6.2L19 9.5V20.25H7A1.25 1.25 0 0 1 5.75 19V5A1.25 1.25 0 0 1 7 3.75Z"/><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M13 3.75V9.5h6M8.5 13h7M8.5 16.5h5"/></svg>
+                </span>
+                <span class="contact-copy">
+                  <span class="contact-label">Resume</span>
+                  <span class="contact-value">View Interactive Resume</span>
+                </span>
+              </a>
+              <a class="contact-go" href="resume.html" aria-label="Open interactive resume">Open</a>
             </div>
           </li>
         </ul>
@@ -287,7 +393,6 @@
   </footer>
 
   <div class="toast" id="toast" role="status" aria-live="polite">Copied to clipboard!</div>
-  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-  <script src="script.js?v=2.1.5"></script>
+  <script src="script.js?v=2.2.0"></script>
 </body>
 </html>
