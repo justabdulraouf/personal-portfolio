@@ -11,7 +11,8 @@
   <meta name="color-scheme" content="dark">
 
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="apple-touch-icon" href="assets/profile.jpg">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="assets/profile-768.webp">
   <link rel="canonical" href="https://justabdulraouf.me/resume.html">
 
   <meta property="og:title" content="Resume — Abdul Raouf Al Sbeei">
@@ -30,14 +31,16 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300..700;1,14..32,300..700&amp;display=swap" rel="stylesheet">
-  <script>
-    document.documentElement.classList.add("js-ready");
-  </script>
-  <link rel="stylesheet" href="styles.css?v=2.0.0">
+  <script>document.documentElement.classList.add("js-ready");</script>
+  <link rel="stylesheet" href="styles.css?v=2.1.0">
 </head>
 <body class="resume-page">
   <a class="skip-link" href="#main">Skip to content</a>
-  <div class="ambient" aria-hidden="true"></div>
+  <canvas id="field" class="field" aria-hidden="true"></canvas>
+  <div class="cursor" aria-hidden="true">
+    <span class="cursor-ring"></span>
+    <span class="cursor-dot"></span>
+  </div>
 
   <header class="site-header" id="header">
     <div class="shell header-inner">
@@ -63,10 +66,12 @@
     <div class="shell resume-shell">
       <header class="resume-hero">
         <p class="eyebrow">Resume</p>
-        <h1>Abdul Raouf Al Sbeei</h1>
+        <h1 class="display resume-display">
+          <span class="display-line"><span>Abdul Raouf Al Sbeei</span></span>
+        </h1>
         <p class="resume-sub">Date of Birth: 9/12/1999 | Cairo, Egypt</p>
         <div class="resume-actions">
-          <a class="btn btn-solid" href="assets/Abdul-Raouf-Al-Sbeei-Resume.pdf" download="Abdul-Raouf-Al-Sbeei-Resume.pdf">Download PDF</a>
+          <a class="btn btn-solid" data-magnetic href="assets/Abdul-Raouf-Al-Sbeei-Resume.pdf" download="Abdul-Raouf-Al-Sbeei-Resume.pdf">Download PDF</a>
           <button type="button" class="btn btn-ghost copy-btn" data-copy="AbdulRaouf.alsbeei@gmail.com">Copy Email Address</button>
         </div>
         <ul class="resume-contacts">
@@ -75,7 +80,7 @@
           <li><a href="https://justabdulraouf.me">justabdulraouf.me</a></li>
           <li><a href="https://x.com/justabdulraouf" target="_blank" rel="noopener noreferrer">X Profile</a></li>
           <li><a href="https://www.linkedin.com/in/justabdulraouf/" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a></li>
-          <li><a href="https://ar.wikipedia.org/wiki/%D9%85%D8%B3%D8%AA%D8%AE%D8%AF%D9%85:%D8%B9%D8%A8%D8%AF%D8%A7%D9%8D%D8%B1%D8%A4%D9%88%D9%81_%D8%A7%D9%84%D8%B3%D8%A8%D9%8A%D8%B9%D9%8A" target="_blank" rel="noopener noreferrer">Arabic Wikipedia Profile</a></li>
+          <li><a href="https://ar.wikipedia.org/wiki/%D9%85%D8%B3%D8%AA%D8%AE%D8%AF%D9%85:%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D8%B1%D8%A4%D9%88%D9%81_%D8%A7%D9%84%D8%B3%D8%A8%D9%8A%D8%B9%D9%8A" target="_blank" rel="noopener noreferrer">Arabic Wikipedia Profile</a></li>
         </ul>
       </header>
 
@@ -98,10 +103,10 @@
             </div>
             <p>Client Engagements &amp; Account Management:</p>
             <ul>
-              <li><a href="http://stabraq.com" target="_blank" rel="noopener noreferrer">Stabraq.com</a> - Cairo, Egypt (Feb 2021 - Present) - Social Media &amp; Community Manager</li>
+              <li><a href="https://stabraq.com" target="_blank" rel="noopener noreferrer">Stabraq.com</a> - Cairo, Egypt (Feb 2021 - Present) - Social Media &amp; Community Manager</li>
               <li>Alhayat Hospital - Latakia, Syria (Sep 2026 - Oct 2026) - Marketing Manager</li>
               <li>Up Clinics - Latakia, Syria (Sep 2026 - Oct 2026) - Marketing Manager</li>
-              <li><a href="http://huda.tv" target="_blank" rel="noopener noreferrer">Huda.Tv</a> - Cairo, Egypt (June 2025 - February 2026) - Social Media Manager</li>
+              <li><a href="https://huda.tv" target="_blank" rel="noopener noreferrer">Huda.Tv</a> - Cairo, Egypt (June 2025 - February 2026) - Social Media Manager</li>
             </ul>
           </li>
           <li>
@@ -227,7 +232,7 @@
       <section class="resume-block reveal">
         <h2>Social Links</h2>
         <ul class="resume-contacts">
-          <li><a href="https://ar.wikipedia.org/wiki/%D9%85%D8%B3%D8%AA%D8%AE%D8%AF%D9%85:%D8%B9%D8%A8%D8%AF%D8%A7%D9%8D%D8%B1%D8%A4%D9%88%D9%81_%D8%A7%D9%84%D8%B3%D8%A8%D9%8A%D8%B9%D9%8A" target="_blank" rel="noopener noreferrer">Check my Arabic Wikipedia Profile</a></li>
+          <li><a href="https://ar.wikipedia.org/wiki/%D9%85%D8%B3%D8%AA%D8%AE%D8%AF%D9%85:%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D8%B1%D8%A4%D9%88%D9%81_%D8%A7%D9%84%D8%B3%D8%A8%D9%8A%D8%B9%D9%8A" target="_blank" rel="noopener noreferrer">Check my Arabic Wikipedia Profile</a></li>
           <li><a href="https://x.com/justabdulraouf" target="_blank" rel="noopener noreferrer">Check my X Profile</a></li>
           <li><a href="https://www.linkedin.com/in/justabdulraouf/" target="_blank" rel="noopener noreferrer">Check my LinkedIn Profile</a></li>
         </ul>
@@ -246,6 +251,6 @@
   </footer>
 
   <div class="toast" id="toast" role="status" aria-live="polite">Copied to clipboard!</div>
-  <script src="script.js?v=2.0.0"></script>
+  <script src="script.js?v=2.1.0"></script>
 </body>
 </html>
