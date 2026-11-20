@@ -32,7 +32,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300..700;1,14..32,300..700&amp;display=swap" rel="stylesheet">
   <script>document.documentElement.classList.add("js-ready");</script>
-  <link rel="stylesheet" href="styles.css?v=2.1.5">
+  <link rel="stylesheet" href="styles.css?v=2.2.3">
 </head>
 <body class="resume-page">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -64,180 +64,217 @@
   </header>
 
   <main id="main" class="resume-main">
-    <div class="shell resume-shell">
-      <header class="resume-hero">
-        <p class="eyebrow">Resume</p>
-        <h1 class="display resume-display">
-          <span class="display-line"><span>Abdul Raouf Al Sbeei</span></span>
-        </h1>
-        <p class="resume-sub">Date of Birth: 9/12/1999 | Cairo, Egypt</p>
-        <div class="resume-actions">
-          <a class="btn btn-solid" data-magnetic href="assets/Abdul-Raouf-Al-Sbeei-Resume.pdf" download="Abdul-Raouf-Al-Sbeei-Resume.pdf">Download PDF</a>
-          <button type="button" class="btn btn-ghost copy-btn" data-copy="AbdulRaouf.alsbeei@gmail.com">Copy Email Address</button>
-        </div>
-        <ul class="resume-contacts">
-          <li><a href="mailto:AbdulRaouf.alsbeei@gmail.com">AbdulRaouf.alsbeei@gmail.com</a></li>
-          <li><a href="tel:+201128839288">+201128839288</a></li>
-          <li><a href="https://justabdulraouf.me">justabdulraouf.me</a></li>
-          <li><a href="https://x.com/justabdulraouf" target="_blank" rel="noopener noreferrer">X Profile</a></li>
-          <li><a href="https://www.linkedin.com/in/justabdulraouf/" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a></li>
-          <li><a href="https://ar.wikipedia.org/wiki/%D9%85%D8%B3%D8%AA%D8%AE%D8%AF%D9%85:%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D8%B1%D8%A4%D9%88%D9%81_%D8%A7%D9%84%D8%B3%D8%A8%D9%8A%D8%B9%D9%8A" target="_blank" rel="noopener noreferrer">Arabic Wikipedia Profile</a></li>
-        </ul>
-      </header>
+    <div class="shell resume-layout">
+      <nav class="resume-nav" aria-label="Resume sections">
+        <a href="#summary">Summary</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#languages">Languages</a>
+        <a href="#links">Links</a>
+      </nav>
 
-      <section class="resume-block reveal">
-        <h2>Who is Abdul?</h2>
-        <p>I am a Writer at heart, crafting narratives that inspire. My work spans from tweets to micro storytelling.</p>
-        <p>As a Tech and AI Enthusiast, I’m constantly seeking the latest innovations, immersing myself in new technologies, experimenting with them, and facilitating discussions about their potential impact on humanity.</p>
-        <p>Through my solo marketing agency, I focus on your brand’s vision, crafting high-impact strategies that amplify your voice and connect authentically with audiences globally.</p>
-        <p>I’m an Apple ecosystem enthusiast, I hold my iPhone capturing the world’s beauty around telling my story with unfiltered shots.</p>
-      </section>
+      <div class="resume-body">
+        <header class="resume-hero">
+          <p class="eyebrow">Resume</p>
+          <h1 class="display resume-display">
+            <span class="display-line"><span>Abdul Raouf</span></span>
+            <span class="display-line"><span>Al Sbeei</span></span>
+          </h1>
+          <p class="resume-sub">Date of Birth: 9/12/1999 | Cairo, Egypt</p>
+          <div class="resume-actions">
+            <a class="btn btn-solid" data-magnetic href="assets/Abdul-Raouf-Al-Sbeei-Resume.pdf" download="Abdul-Raouf-Al-Sbeei-Resume.pdf">Download PDF</a>
+            <button type="button" class="btn btn-ghost copy-btn" data-copy="AbdulRaouf.alsbeei@gmail.com" aria-label="Copy email address"><span class="copy-label">Copy Email Address</span></button>
+          </div>
+          <ul class="resume-contacts">
+            <li><a href="mailto:AbdulRaouf.alsbeei@gmail.com">AbdulRaouf.alsbeei@gmail.com</a></li>
+            <li><a href="tel:+201128839288">+201128839288</a></li>
+            <li><a href="https://justabdulraouf.me">justabdulraouf.me</a></li>
+            <li><a href="https://x.com/justabdulraouf" target="_blank" rel="noopener noreferrer">X Profile</a></li>
+            <li><a href="https://www.linkedin.com/in/justabdulraouf/" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a></li>
+            <li><a href="https://ar.wikipedia.org/wiki/%D9%85%D8%B3%D8%AA%D8%AE%D8%AF%D9%85:%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D8%B1%D8%A4%D9%88%D9%81_%D8%A7%D9%84%D8%B3%D8%A8%D9%8A%D8%B9%D9%8A" target="_blank" rel="noopener noreferrer">Arabic Wikipedia Profile</a></li>
+          </ul>
+        </header>
 
-      <section class="resume-block reveal">
-        <h2>Professional Experience</h2>
-        <ol class="experience">
-          <li>
-            <div class="job-head">
-              <h3>Founder &amp; Marketing Lead</h3>
-              <p class="job-org">Solo Marketing Agency</p>
-              <p class="job-meta">Cairo, Egypt (Remote Management) · February 2021 — Present</p>
-            </div>
-            <p>Client Engagements &amp; Account Management:</p>
-            <ul>
-              <li><a href="https://stabraq.com" target="_blank" rel="noopener noreferrer">Stabraq.com</a> - Cairo, Egypt (Feb 2021 - Present) - Social Media &amp; Community Manager</li>
-              <li>Alhayat Hospital - Latakia, Syria (Sep 2026 - Oct 2026) - Marketing Manager</li>
-              <li>Up Clinics - Latakia, Syria (Sep 2026 - Oct 2026) - Marketing Manager</li>
-              <li><a href="https://huda.tv" target="_blank" rel="noopener noreferrer">Huda.Tv</a> - Cairo, Egypt (June 2025 - February 2026) - Social Media Manager</li>
-            </ul>
-          </li>
-          <li>
-            <div class="job-head">
-              <h3>AI Trainer</h3>
-              <p class="job-org">Outlier.ai</p>
-              <p class="job-meta">Remote (SF, CA, USA) · November 2024 — March 2025</p>
-            </div>
-          </li>
-          <li>
-            <div class="job-head">
-              <h3>Community Moderator</h3>
-              <p class="job-org">Lew Later</p>
-              <p class="job-meta">Remote (Ontario, Canada) · December 2022 — October 2024</p>
-            </div>
-          </li>
-          <li>
-            <div class="job-head">
-              <h3>Apple News Reporter</h3>
-              <p class="job-org">SuperCharged</p>
-              <p class="job-meta">Remote (Jeddah, Saudi Arabia) · September 2023 — May 2024</p>
-            </div>
-          </li>
-          <li>
-            <div class="job-head">
-              <h3>Planning Manager</h3>
-              <p class="job-org">Bolido Group</p>
-              <p class="job-meta">Giza, Egypt · March 2021 — March 2023</p>
-            </div>
-          </li>
-          <li>
-            <div class="job-head">
-              <h3>Logistics &amp; Marketing Coordinator</h3>
-              <p class="job-org">Planet Food Group &amp; Qotuf For Trading</p>
-              <p class="job-meta">Giza, Egypt · October 2019 — March 2021</p>
-            </div>
-          </li>
-          <li>
-            <div class="job-head">
-              <h3>Sales Team Leader</h3>
-              <p class="job-org">Dama Rose Fashion</p>
-              <p class="job-meta">Giza, Egypt · February 2019 — April 2019</p>
-            </div>
-          </li>
-          <li>
-            <div class="job-head">
-              <h3>Administrative Supervisor</h3>
-              <p class="job-org">Al Awael Private School</p>
-              <p class="job-meta">Giza, Egypt · September 2018 — January 2019</p>
-            </div>
-          </li>
-          <li>
-            <div class="job-head">
-              <h3>Management Assistant</h3>
-              <p class="job-org">Al - Tawfiq Plumbing Products Co.</p>
-              <p class="job-meta">Giza, Egypt · January 2016 — August 2018</p>
-            </div>
-          </li>
-        </ol>
-      </section>
+        <section class="resume-block reveal" id="summary">
+          <h2>Who is Abdul?</h2>
+          <p>I am a Writer at heart, crafting narratives that inspire. My work spans from tweets to micro storytelling.</p>
+          <p>As a Tech and AI Enthusiast, I’m constantly seeking the latest innovations, immersing myself in new technologies, experimenting with them, and facilitating discussions about their potential impact on humanity.</p>
+          <p>Through my solo marketing agency, I focus on your brand’s vision, crafting high-impact strategies that amplify your voice and connect authentically with audiences globally.</p>
+          <p>I’m an Apple ecosystem enthusiast, I hold my iPhone capturing the world’s beauty around telling my story with unfiltered shots.</p>
+        </section>
 
-      <section class="resume-block reveal">
-        <h2>Education</h2>
-        <div class="job-head">
-          <h3>Business Administration</h3>
-          <p class="job-org">Faculty of Commerce, Cairo University</p>
-          <p class="job-meta">September 2017 — September 2024</p>
-        </div>
-      </section>
+        <section class="resume-block reveal" id="experience">
+          <h2>Professional Experience</h2>
+          <ol class="experience">
+            <li>
+              <div class="job-head">
+                <h3>Founder &amp; Marketing Lead</h3>
+                <p class="job-org">Solo Marketing Agency</p>
+                <p class="job-meta">Cairo, Egypt (Remote Management) · February 2021 — Present</p>
+              </div>
+              <p>Client Engagements &amp; Account Management:</p>
+              <ul>
+                <li><a href="https://stabraq.com" target="_blank" rel="noopener noreferrer">Stabraq.com</a> - Cairo, Egypt (Feb 2021 - Present) - Social Media &amp; Community Manager</li>
+                <li>Alhayat Hospital - Latakia, Syria (Sep 2026 - Oct 2026) - Marketing Manager</li>
+                <li>Up Clinics - Latakia, Syria (Sep 2026 - Oct 2026) - Marketing Manager</li>
+                <li><a href="https://huda.tv" target="_blank" rel="noopener noreferrer">Huda.Tv</a> - Cairo, Egypt (June 2025 - February 2026) - Social Media Manager</li>
+              </ul>
+            </li>
+            <li>
+              <div class="job-head">
+                <h3>AI Trainer</h3>
+                <p class="job-org">Outlier.ai</p>
+                <p class="job-meta">Remote (SF, CA, USA) · November 2024 — March 2025</p>
+              </div>
+            </li>
+            <li>
+              <div class="job-head">
+                <h3>Community Moderator</h3>
+                <p class="job-org">Lew Later</p>
+                <p class="job-meta">Remote (Ontario, Canada) · December 2022 — October 2024</p>
+              </div>
+            </li>
+            <li>
+              <div class="job-head">
+                <h3>Apple News Reporter</h3>
+                <p class="job-org">SuperCharged</p>
+                <p class="job-meta">Remote (Jeddah, Saudi Arabia) · September 2023 — May 2024</p>
+              </div>
+            </li>
+            <li>
+              <div class="job-head">
+                <h3>Planning Manager</h3>
+                <p class="job-org">Bolido Group</p>
+                <p class="job-meta">Giza, Egypt · March 2021 — March 2023</p>
+              </div>
+            </li>
+            <li>
+              <div class="job-head">
+                <h3>Logistics &amp; Marketing Coordinator</h3>
+                <p class="job-org">Planet Food Group &amp; Qotuf For Trading</p>
+                <p class="job-meta">Giza, Egypt · October 2019 — March 2021</p>
+              </div>
+            </li>
+            <li>
+              <div class="job-head">
+                <h3>Sales Team Leader</h3>
+                <p class="job-org">Dama Rose Fashion</p>
+                <p class="job-meta">Giza, Egypt · February 2019 — April 2019</p>
+              </div>
+            </li>
+            <li>
+              <div class="job-head">
+                <h3>Administrative Supervisor</h3>
+                <p class="job-org">Al Awael Private School</p>
+                <p class="job-meta">Giza, Egypt · September 2018 — January 2019</p>
+              </div>
+            </li>
+            <li>
+              <div class="job-head">
+                <h3>Management Assistant</h3>
+                <p class="job-org">Al - Tawfiq Plumbing Products Co.</p>
+                <p class="job-meta">Giza, Egypt · January 2016 — August 2018</p>
+              </div>
+            </li>
+          </ol>
+        </section>
 
-      <section class="resume-block reveal">
-        <h2>Courses</h2>
-        <ul class="plain-list">
-          <li>Microsoft Excel 2016 — Udemy.com (August 2018)</li>
-          <li>Web Development for beginners — Udemy.com (August 2018)</li>
-          <li>First Aids — Egyptian Red Crescent (January 2019)</li>
-          <li>Storytelling with Hazem El Seddiq — Udemy.com (February 2022)</li>
-          <li>Introduction to Programming with Python — CodeSignal (May 2025)</li>
-        </ul>
-      </section>
+        <section class="resume-block reveal" id="education">
+          <h2>Education</h2>
+          <div class="job-head">
+            <h3>Business Administration</h3>
+            <p class="job-org">Faculty of Commerce, Cairo University</p>
+            <p class="job-meta">September 2017 — September 2024</p>
+          </div>
+          <h3 class="resume-subhead">Courses</h3>
+          <ul class="plain-list">
+            <li>Microsoft Excel 2016 — Udemy.com (August 2018)</li>
+            <li>Web Development for beginners — Udemy.com (August 2018)</li>
+            <li>First Aids — Egyptian Red Crescent (January 2019)</li>
+            <li>Storytelling with Hazem El Seddiq — Udemy.com (February 2022)</li>
+            <li>Introduction to Programming with Python — CodeSignal (May 2025)</li>
+          </ul>
+        </section>
 
-      <section class="resume-block reveal">
-        <h2>Languages</h2>
-        <p>Arabic: Native • English: Fluent</p>
-      </section>
+        <section class="resume-block reveal" id="skills">
+          <h2>Professional Skills</h2>
+          <div class="skill-groups">
+            <div class="skill-group">
+              <h3>Writing &amp; Storytelling</h3>
+              <ul class="skill-list">
+                <li>Long-form writing</li>
+                <li>Copywriting</li>
+                <li>Micro Storytelling</li>
+                <li>Storytelling</li>
+                <li>Promotional Copy</li>
+                <li>News Writing</li>
+              </ul>
+            </div>
+            <div class="skill-group">
+              <h3>Marketing &amp; Communities</h3>
+              <ul class="skill-list">
+                <li>Communities Management</li>
+                <li>Social Media Management</li>
+                <li>Content Management</li>
+                <li>Strategy Execution</li>
+                <li>Marketing Communications</li>
+                <li>Event Planning</li>
+                <li>Online Community Moderation</li>
+              </ul>
+            </div>
+            <div class="skill-group">
+              <h3>Leadership &amp; Operations</h3>
+              <ul class="skill-list">
+                <li>Time management</li>
+                <li>Leadership</li>
+                <li>Sales</li>
+                <li>Customer Service</li>
+                <li>Personal Assistance</li>
+                <li>Administrative Organization</li>
+                <li>Department Supervision</li>
+                <li>Logistics Management</li>
+                <li>Project Management</li>
+                <li>Project Planning</li>
+                <li>Team Coordination</li>
+              </ul>
+            </div>
+            <div class="skill-group">
+              <h3>Creative &amp; Technology</h3>
+              <ul class="skill-list">
+                <li>Graphic Design</li>
+                <li>Video Editing</li>
+                <li>Artificial Intelligence</li>
+                <li>Reinforcement Learning Human Feedback (RLHF)</li>
+                <li>Microsoft Office</li>
+              </ul>
+            </div>
+            <div class="skill-group">
+              <h3>Studies</h3>
+              <ul class="skill-list">
+                <li>Islamic Studies</li>
+              </ul>
+            </div>
+          </div>
+        </section>
 
-      <section class="resume-block reveal">
-        <h2>Professional Skills</h2>
-        <ul class="skill-list">
-          <li>Communities Management</li>
-          <li>Long-form writing</li>
-          <li>Copywriting</li>
-          <li>Micro Storytelling</li>
-          <li>Time management</li>
-          <li>Leadership</li>
-          <li>Social Media Management</li>
-          <li>Storytelling</li>
-          <li>Content Management</li>
-          <li>Strategy Execution</li>
-          <li>Promotional Copy</li>
-          <li>Event Planning</li>
-          <li>Online Community Moderation</li>
-          <li>Graphic Design</li>
-          <li>Video Editing</li>
-          <li>News Writing</li>
-          <li>Artificial Intelligence</li>
-          <li>Reinforcement Learning Human Feedback (RLHF)</li>
-          <li>Marketing Communications</li>
-          <li>Sales</li>
-          <li>Customer Service</li>
-          <li>Personal Assistance</li>
-          <li>Administrative Organization</li>
-          <li>Department Supervision</li>
-          <li>Logistics Management</li>
-          <li>Project Management</li>
-          <li>Project Planning</li>
-          <li>Team Coordination</li>
-          <li>Microsoft Office</li>
-          <li>Islamic Studies</li>
-        </ul>
-      </section>
+        <section class="resume-block reveal" id="languages">
+          <h2>Languages</h2>
+          <ul class="skill-list lang-list">
+            <li>Arabic: Native</li>
+            <li>English: Fluent</li>
+          </ul>
+        </section>
 
-      <section class="resume-block reveal">
-        <h2>Social Links</h2>
-        <ul class="resume-contacts">
-          <li><a href="https://ar.wikipedia.org/wiki/%D9%85%D8%B3%D8%AA%D8%AE%D8%AF%D9%85:%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D8%B1%D8%A4%D9%88%D9%81_%D8%A7%D9%84%D8%B3%D8%A8%D9%8A%D8%B9%D9%8A" target="_blank" rel="noopener noreferrer">Check my Arabic Wikipedia Profile</a></li>
-          <li><a href="https://x.com/justabdulraouf" target="_blank" rel="noopener noreferrer">Check my X Profile</a></li>
-          <li><a href="https://www.linkedin.com/in/justabdulraouf/" target="_blank" rel="noopener noreferrer">Check my LinkedIn Profile</a></li>
-        </ul>
-      </section>
+        <section class="resume-block reveal" id="links">
+          <h2>Social Links</h2>
+          <ul class="resume-contacts resume-link-list">
+            <li><a href="https://ar.wikipedia.org/wiki/%D9%85%D8%B3%D8%AA%D8%AE%D8%AF%D9%85:%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D8%B1%D8%A4%D9%88%D9%81_%D8%A7%D9%84%D8%B3%D8%A8%D9%8A%D8%B9%D9%8A" target="_blank" rel="noopener noreferrer">Check my Arabic Wikipedia Profile</a></li>
+            <li><a href="https://x.com/justabdulraouf" target="_blank" rel="noopener noreferrer">Check my X Profile</a></li>
+            <li><a href="https://www.linkedin.com/in/justabdulraouf/" target="_blank" rel="noopener noreferrer">Check my LinkedIn Profile</a></li>
+          </ul>
+        </section>
+      </div>
     </div>
   </main>
 
@@ -252,6 +289,6 @@
   </footer>
 
   <div class="toast" id="toast" role="status" aria-live="polite">Copied to clipboard!</div>
-  <script src="script.js?v=2.1.5"></script>
+  <script src="script.js?v=2.2.3"></script>
 </body>
 </html>
