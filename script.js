@@ -1,198 +1,152 @@
-document.addEventListener('DOMContentLoaded', () => {
-  // Theme Switcher Logic
-  const themeToggle = document.getElementById('themeToggle');
-  const html = document.documentElement;
+(() => {
+  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const finePointer = window.matchMedia("(pointer: fine)");
+  const root = document.documentElement;
 
-  const savedTheme = localStorage.getItem('theme');
-  if (savedTheme) {
-    html.setAttribute('data-theme', savedTheme);
-  } else {
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    html.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
-  }
+  root.classList.add("js-ready");
 
-  if (themeToggle) {
-    themeToggle.addEventListener('click', () => {
-      const currentTheme = html.getAttribute('data-theme');
-      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      html.setAttribute('data-theme', newTheme);
-      localStorage.setItem('theme', newTheme);
-
-      // Re-load Twitter widgets to match new theme if available
-      setTimeout(() => {
-        if (window.twttr && window.twttr.widgets) {
-          window.twttr.widgets.load();
-        }
-      }, 100);
-    });
-  }
-
-  // Dynamic OS System Theme Listener
-  const systemThemeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-  systemThemeMediaQuery.addEventListener('change', (e) => {
-    if (!localStorage.getItem('theme')) {
-      const newSystemTheme = e.matches ? 'dark' : 'light';
-      html.setAttribute('data-theme', newSystemTheme);
-      setTimeout(() => {
-        if (window.twttr && window.twttr.widgets) {
-          window.twttr.widgets.load();
-        }
-      }, 100);
-    }
-  });
-
-  // Mobile Navigation Menu Toggle
-  const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-  const siteNav = document.getElementById('siteNav');
-
-  if (mobileMenuBtn && siteNav) {
-    mobileMenuBtn.addEventListener('click', () => {
-      siteNav.classList.toggle('active');
-    });
-  }
-
-  // Smooth scroll navigation with pixel-perfect header offset
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      const targetId = this.getAttribute('href');
-      if (!targetId || targetId === '#') return;
-      const targetElement = document.querySelector(targetId);
-      if (targetElement) {
-        e.preventDefault();
-        if (siteNav && siteNav.classList.contains('active')) {
-          siteNav.classList.remove('active');
-        }
-        const header = document.getElementById('header');
-        const headerHeight = header ? header.getBoundingClientRect().height : 72;
-        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
-        
-        window.scrollTo({
-          top: targetPosition,
-          behavior: 'smooth'
-        });
-
-        if (history.pushState) {
-          history.pushState(null, null, targetId);
-        }
-      }
-    });
-  });
-
-  // Embedded Resume Modal Interactivity
-  const resumeModalOverlay = document.getElementById('resumeModalOverlay');
-  const headerResumeBtn = document.getElementById('headerResumeBtn');
-  const heroResumeBtn = document.getElementById('heroResumeBtn');
-  const cardResumeBtn = document.getElementById('cardResumeBtn');
-  const closeResumeBtn = document.getElementById('closeResumeBtn');
-  const printResumeBtn = document.getElementById('printResumeBtn');
-
-  function openResumeModal() {
-    if (resumeModalOverlay) {
-      resumeModalOverlay.classList.add('active');
-      document.body.classList.add('modal-open');
-    }
-  }
-
-  function closeResumeModal() {
-    if (resumeModalOverlay) {
-      resumeModalOverlay.classList.remove('active');
-      document.body.classList.remove('modal-open');
-    }
-  }
-
-  if (headerResumeBtn) headerResumeBtn.addEventListener('click', openResumeModal);
-  if (heroResumeBtn) heroResumeBtn.addEventListener('click', openResumeModal);
-  if (cardResumeBtn) cardResumeBtn.addEventListener('click', openResumeModal);
-  if (closeResumeBtn) closeResumeBtn.addEventListener('click', closeResumeModal);
-
-  if (resumeModalOverlay) {
-    resumeModalOverlay.addEventListener('click', (e) => {
-      if (e.target === resumeModalOverlay) {
-        closeResumeModal();
-      }
-    });
-  }
-
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && resumeModalOverlay && resumeModalOverlay.classList.contains('active')) {
-      closeResumeModal();
-    }
-  });
-
-  if (printResumeBtn) {
-    printResumeBtn.addEventListener('click', () => {
-      window.print();
-    });
-  }
-
-  // Copy to Clipboard with Toast Notification Micro-animations
-  const copyBtns = document.querySelectorAll('[data-copy]');
-  const toast = document.getElementById('toast');
-  const toastText = document.getElementById('toastText');
+  const header = document.getElementById("header");
+  const nav = document.getElementById("siteNav");
+  const menuBtn = document.getElementById("menuBtn");
+  const toast = document.getElementById("toast");
   let toastTimer;
 
-  copyBtns.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      const textToCopy = btn.getAttribute('data-copy');
+  const closeMenu = () => {
+    document.body.classList.remove("menu-open");
+    if (menuBtn) menuBtn.setAttribute("aria-expanded", "false");
+    if (menuBtn) menuBtn.setAttribute("aria-label", "Open menu");
+  };
 
-      if (textToCopy) {
-        navigator.clipboard.writeText(textToCopy).then(() => {
-          showToast(`Copied "${textToCopy}" to clipboard!`);
-        }).catch(err => {
-          console.error('Failed to copy: ', err);
+  const openMenu = () => {
+    document.body.classList.add("menu-open");
+    if (menuBtn) menuBtn.setAttribute("aria-expanded", "true");
+    if (menuBtn) menuBtn.setAttribute("aria-label", "Close menu");
+  };
+
+  if (menuBtn && nav) {
+    menuBtn.addEventListener("click", () => {
+      if (document.body.classList.contains("menu-open")) closeMenu();
+      else openMenu();
+    });
+
+    nav.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", closeMenu);
+    });
+  }
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeMenu();
+  });
+
+  const onScroll = () => {
+    if (!header) return;
+    header.classList.toggle("is-scrolled", window.scrollY > 8);
+  };
+
+  onScroll();
+  window.addEventListener("scroll", onScroll, { passive: true });
+
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", (event) => {
+      const id = anchor.getAttribute("href");
+      if (!id || id === "#") return;
+      const target = document.querySelector(id);
+      if (!target) return;
+      event.preventDefault();
+      closeMenu();
+      const offset = header ? header.getBoundingClientRect().height : 64;
+      const top = target.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top, behavior: reduced.matches ? "auto" : "smooth" });
+      if (history.pushState) history.pushState(null, "", id);
+    });
+  });
+
+  const sections = document.querySelectorAll("main section[id]");
+  const navLinks = document.querySelectorAll(".nav-link");
+
+  if (sections.length && "IntersectionObserver" in window) {
+    const navObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const id = entry.target.getAttribute("id");
+          navLinks.forEach((link) => {
+            const href = link.getAttribute("href") || "";
+            const active = href.endsWith(`#${id}`);
+            link.classList.toggle("active", active);
+          });
         });
+      },
+      { rootMargin: "-20% 0px -70% 0px", threshold: 0 }
+    );
+    sections.forEach((section) => navObserver.observe(section));
+  }
+
+  const revealItems = document.querySelectorAll(".reveal");
+  if (revealItems.length) {
+    if (reduced.matches || !("IntersectionObserver" in window)) {
+      revealItems.forEach((el) => el.classList.add("is-visible"));
+    } else {
+      const revealObserver = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          });
+        },
+        { rootMargin: "0px 0px -8% 0px", threshold: 0.12 }
+      );
+      revealItems.forEach((el) => revealObserver.observe(el));
+    }
+  }
+
+  const showToast = (message) => {
+    if (!toast) return;
+    toast.textContent = message;
+    toast.classList.add("show");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toast.classList.remove("show"), 2400);
+  };
+
+  document.querySelectorAll("[data-copy]").forEach((btn) => {
+    btn.addEventListener("click", async (event) => {
+      event.preventDefault();
+      const value = btn.getAttribute("data-copy");
+      if (!value) return;
+      try {
+        await navigator.clipboard.writeText(value);
+        const original = btn.textContent;
+        btn.classList.add("is-copied");
+        if (btn.tagName === "BUTTON") btn.textContent = "Copied";
+        showToast(`Copied “${value}” to clipboard!`);
+        setTimeout(() => {
+          btn.classList.remove("is-copied");
+          if (btn.tagName === "BUTTON" && original) btn.textContent = original;
+        }, 1600);
+      } catch (error) {
+        showToast("Could not copy. Please try again.");
       }
     });
   });
 
-  function showToast(message) {
-    if (!toast) return;
-    if (toastText) toastText.textContent = message;
-
-    toast.classList.add('show');
-    clearTimeout(toastTimer);
-
-    toastTimer = setTimeout(() => {
-      toast.classList.remove('show');
-    }, 3000);
+  const ambient = document.querySelector(".ambient");
+  if (ambient && finePointer.matches && !reduced.matches) {
+    let frame = 0;
+    const move = (event) => {
+      if (frame) return;
+      frame = requestAnimationFrame(() => {
+        root.style.setProperty("--mx", `${event.clientX}px`);
+        root.style.setProperty("--my", `${event.clientY}px`);
+        frame = 0;
+      });
+    };
+    window.addEventListener("pointermove", move, { passive: true });
   }
 
-  // Active Navigation Scroll Observer
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-link');
-
-  const observerOptions = {
-    root: null,
-    rootMargin: '-20% 0px -70% 0px',
-    threshold: 0
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const id = entry.target.getAttribute('id');
-        navLinks.forEach(link => {
-          link.classList.remove('active');
-          if (link.getAttribute('href') === `#${id}`) {
-            link.classList.add('active');
-          }
-        });
-      }
-    });
-  }, observerOptions);
-
-  sections.forEach(section => observer.observe(section));
-
-  // Initialize and load Twitter / X widget
-  if (window.twttr && window.twttr.widgets) {
-    window.twttr.widgets.load();
-  } else {
-    window.addEventListener('load', () => {
-      if (window.twttr && window.twttr.widgets) {
-        window.twttr.widgets.load();
-      }
-    });
-  }
-});
+  reduced.addEventListener("change", () => {
+    if (reduced.matches) {
+      revealItems.forEach((el) => el.classList.add("is-visible"));
+    }
+  });
+})();
