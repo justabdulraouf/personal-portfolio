@@ -11,20 +11,12 @@
 
   const reduced = () => reducedQuery.matches;
 
-  let scrollLockY = 0;
-
   const isMenuOpen = () => document.body.classList.contains("menu-open");
 
   const closeMenu = () => {
     if (!isMenuOpen()) return;
     document.body.classList.remove("menu-open");
     document.documentElement.classList.remove("menu-open");
-    document.body.style.position = "";
-    document.body.style.top = "";
-    document.body.style.left = "";
-    document.body.style.right = "";
-    document.body.style.width = "";
-    window.scrollTo(0, scrollLockY);
     if (menuBtn) {
       menuBtn.setAttribute("aria-expanded", "false");
       menuBtn.setAttribute("aria-label", "Open menu");
@@ -36,14 +28,8 @@
 
   const openMenu = () => {
     if (isMenuOpen()) return;
-    scrollLockY = window.scrollY;
     document.body.classList.add("menu-open");
     document.documentElement.classList.add("menu-open");
-    document.body.style.position = "fixed";
-    document.body.style.top = `-${scrollLockY}px`;
-    document.body.style.left = "0";
-    document.body.style.right = "0";
-    document.body.style.width = "100%";
     if (menuBtn) {
       menuBtn.setAttribute("aria-expanded", "true");
       menuBtn.setAttribute("aria-label", "Close menu");
@@ -51,6 +37,16 @@
     const firstLink = nav && nav.querySelector("a");
     if (firstLink) firstLink.focus();
   };
+
+  const shouldAllowMenuScroll = (target) =>
+    !!(nav && target && nav.contains(target) && nav.scrollHeight > nav.clientHeight);
+
+  const preventBackgroundScroll = (event) => {
+    if (!isMenuOpen() || shouldAllowMenuScroll(event.target)) return;
+    event.preventDefault();
+  };
+  document.addEventListener("touchmove", preventBackgroundScroll, { passive: false });
+  document.addEventListener("wheel", preventBackgroundScroll, { passive: false });
 
   if (menuBtn && nav) {
     menuBtn.addEventListener("click", () => {
