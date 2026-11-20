@@ -783,7 +783,7 @@ main { overflow-x: clip; }
   min-height: 4.4rem;
   transition: background-color 280ms var(--ease-travel);
 }
-.contact-row > a {
+.contact-row > a:not(.contact-go) {
   display: flex;
   align-items: center;
   gap: 0.95rem;
@@ -791,7 +791,14 @@ main { overflow-x: clip; }
   min-width: 0;
   transition: opacity var(--t-fast) var(--ease-travel);
 }
-.contact-row > a:hover { opacity: 0.8; }
+.contact-row > a:not(.contact-go):hover { opacity: 0.8; }
+.contact-go {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+}
 .contact-icon {
   width: 2.4rem;
   height: 2.4rem;
