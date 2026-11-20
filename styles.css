@@ -775,6 +775,15 @@ a.contact-row:hover::after { color: var(--fg); transform: translateX(4px); }
   .hero-layout, .about-layout { grid-template-columns: 1fr; }
   .display { font-size: clamp(3.1rem, 16vw, 5.25rem); }
   .portrait-card { position: static; order: -1; max-width: 22rem; }
+  /* Pin the bar to the viewport while the menu is open, in case overflow
+     locking unsticks position:sticky. */
+  body.menu-open .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+  }
   .menu-btn { display: inline-flex; }
   .nav-resume-mobile { display: block; }
   .site-nav {
@@ -803,11 +812,9 @@ a.contact-row:hover::after { color: var(--fg); transform: translateX(4px); }
     padding: 0.85rem 0;
     border-bottom: 1px solid var(--line);
   }
-  html.menu-open,
   body.menu-open {
     overflow: hidden;
     overscroll-behavior: none;
-    touch-action: none;
   }
   body.menu-open .site-nav { touch-action: pan-y; }
 }
