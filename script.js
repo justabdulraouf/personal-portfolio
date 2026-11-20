@@ -3,6 +3,32 @@ document.addEventListener('DOMContentLoaded', () => {
   const themeToggle = document.getElementById('themeToggle');
   const html = document.documentElement;
 
+  const twitterContainer = document.getElementById('twitterEmbedContainer');
+  const originalTweetHTML = twitterContainer ? twitterContainer.innerHTML : '';
+
+  function currentTheme() {
+    return html.getAttribute('data-theme') || 'dark';
+  }
+
+  function updateThemeControls(theme) {
+    if (!themeToggle) return;
+    const isDark = theme === 'dark';
+    themeToggle.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+    themeToggle.setAttribute('aria-label', isDark ? 'Switch to light theme' : 'Switch to dark theme');
+  }
+
+  function syncTwitterTheme(theme) {
+    if (!twitterContainer || !originalTweetHTML) return;
+    twitterContainer.innerHTML = originalTweetHTML;
+    const blockquote = twitterContainer.querySelector('blockquote.twitter-tweet');
+    if (blockquote) {
+      blockquote.setAttribute('data-theme', theme);
+    }
+    if (window.twttr && window.twttr.widgets) {
+      window.twttr.widgets.load(twitterContainer);
+    }
+  }
+
   const savedTheme = localStorage.getItem('theme');
   if (savedTheme) {
     html.setAttribute('data-theme', savedTheme);
@@ -10,20 +36,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     html.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
   }
+  updateThemeControls(currentTheme());
+  syncTwitterTheme(currentTheme());
 
   if (themeToggle) {
     themeToggle.addEventListener('click', () => {
-      const currentTheme = html.getAttribute('data-theme');
-      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      const newTheme = currentTheme() === 'dark' ? 'light' : 'dark';
       html.setAttribute('data-theme', newTheme);
       localStorage.setItem('theme', newTheme);
-
-      // Re-load Twitter widgets to match new theme if available
-      setTimeout(() => {
-        if (window.twttr && window.twttr.widgets) {
-          window.twttr.widgets.load();
-        }
-      }, 100);
+      updateThemeControls(newTheme);
+      setTimeout(() => syncTwitterTheme(newTheme), 100);
     });
   }
 
@@ -33,11 +55,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!localStorage.getItem('theme')) {
       const newSystemTheme = e.matches ? 'dark' : 'light';
       html.setAttribute('data-theme', newSystemTheme);
-      setTimeout(() => {
-        if (window.twttr && window.twttr.widgets) {
-          window.twttr.widgets.load();
-        }
-      }, 100);
+      updateThemeControls(newSystemTheme);
+      setTimeout(() => syncTwitterTheme(newSystemTheme), 100);
     }
   });
 
@@ -45,9 +64,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileMenuBtn = document.getElementById('mobileMenuBtn');
   const siteNav = document.getElementById('siteNav');
 
+  function setMobileMenuOpen(isOpen) {
+    if (!siteNav || !mobileMenuBtn) return;
+    siteNav.classList.toggle('active', isOpen);
+    mobileMenuBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  }
+
   if (mobileMenuBtn && siteNav) {
     mobileMenuBtn.addEventListener('click', () => {
-      siteNav.classList.toggle('active');
+      setMobileMenuOpen(!siteNav.classList.contains('active'));
     });
   }
 
@@ -60,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (targetElement) {
         e.preventDefault();
         if (siteNav && siteNav.classList.contains('active')) {
-          siteNav.classList.remove('active');
+          setMobileMenuOpen(false);
         }
         const header = document.getElementById('header');
         const headerHeight = header ? header.getBoundingClientRect().height : 72;
@@ -86,17 +111,26 @@ document.addEventListener('DOMContentLoaded', () => {
   const closeResumeBtn = document.getElementById('closeResumeBtn');
   const printResumeBtn = document.getElementById('printResumeBtn');
 
+  let lastResumeFocus = null;
+
   function openResumeModal() {
     if (resumeModalOverlay) {
+      lastResumeFocus = document.activeElement;
       resumeModalOverlay.classList.add('active');
+      resumeModalOverlay.setAttribute('aria-hidden', 'false');
       document.body.classList.add('modal-open');
+      if (closeResumeBtn) closeResumeBtn.focus();
     }
   }
 
   function closeResumeModal() {
     if (resumeModalOverlay) {
       resumeModalOverlay.classList.remove('active');
+      resumeModalOverlay.setAttribute('aria-hidden', 'true');
       document.body.classList.remove('modal-open');
+      if (lastResumeFocus && typeof lastResumeFocus.focus === 'function') {
+        lastResumeFocus.focus();
+      }
     }
   }
 
@@ -114,8 +148,14 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && resumeModalOverlay && resumeModalOverlay.classList.contains('active')) {
+    if (e.key !== 'Escape') return;
+    if (resumeModalOverlay && resumeModalOverlay.classList.contains('active')) {
       closeResumeModal();
+      return;
+    }
+    if (siteNav && siteNav.classList.contains('active')) {
+      setMobileMenuOpen(false);
+      if (mobileMenuBtn) mobileMenuBtn.focus();
     }
   });
 
@@ -185,14 +225,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   sections.forEach(section => observer.observe(section));
 
-  // Initialize and load Twitter / X widget
-  if (window.twttr && window.twttr.widgets) {
-    window.twttr.widgets.load();
-  } else {
-    window.addEventListener('load', () => {
-      if (window.twttr && window.twttr.widgets) {
-        window.twttr.widgets.load();
-      }
-    });
+  // Load Twitter / X widget once the platform script is ready, in the current theme
+  if (!(window.twttr && window.twttr.widgets)) {
+    window.addEventListener('load', () => syncTwitterTheme(currentTheme()));
   }
 });
