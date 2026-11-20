@@ -11,32 +11,75 @@
 
   const reduced = () => reducedQuery.matches;
 
+  const isMenuOpen = () => document.body.classList.contains("menu-open");
+
   const closeMenu = () => {
+    if (!isMenuOpen()) return;
     document.body.classList.remove("menu-open");
+    document.documentElement.classList.remove("menu-open");
     if (menuBtn) {
       menuBtn.setAttribute("aria-expanded", "false");
       menuBtn.setAttribute("aria-label", "Open menu");
+      if (nav && (document.activeElement === nav || nav.contains(document.activeElement))) {
+        menuBtn.focus();
+      }
     }
   };
 
   const openMenu = () => {
+    if (isMenuOpen()) return;
     document.body.classList.add("menu-open");
+    document.documentElement.classList.add("menu-open");
     if (menuBtn) {
       menuBtn.setAttribute("aria-expanded", "true");
       menuBtn.setAttribute("aria-label", "Close menu");
     }
+    const firstLink = nav && nav.querySelector("a");
+    if (firstLink) firstLink.focus();
   };
+
+  const shouldAllowMenuScroll = (target) =>
+    !!(nav && target && nav.contains(target) && nav.scrollHeight > nav.clientHeight);
+
+  const preventBackgroundScroll = (event) => {
+    if (!isMenuOpen() || shouldAllowMenuScroll(event.target)) return;
+    event.preventDefault();
+  };
+  document.addEventListener("touchmove", preventBackgroundScroll, { passive: false });
+  document.addEventListener("wheel", preventBackgroundScroll, { passive: false });
 
   if (menuBtn && nav) {
     menuBtn.addEventListener("click", () => {
-      if (document.body.classList.contains("menu-open")) closeMenu();
+      if (isMenuOpen()) closeMenu();
       else openMenu();
     });
     nav.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
   }
 
   document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") closeMenu();
+    if (event.key === "Escape") {
+      if (isMenuOpen()) {
+        event.preventDefault();
+        closeMenu();
+      }
+      return;
+    }
+    if (event.key !== "Tab" || !isMenuOpen() || !nav) return;
+    const focusable = [menuBtn, ...nav.querySelectorAll("a, button")].filter(Boolean);
+    if (!focusable.length) return;
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 860 && isMenuOpen()) closeMenu();
   });
 
   const onScrollHeader = () => {
