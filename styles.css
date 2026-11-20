@@ -1079,7 +1079,9 @@ body.resume-page main { overflow-x: visible; }
 
   .x-head { grid-template-columns: 1fr; }
   .x-head-actions { padding-bottom: 0; }
-  .resume-layout { grid-template-columns: 1fr; gap: 1.25rem; }
+  .resume-main { padding-top: 0; }
+  .resume-hero { padding-top: 1.35rem; }
+  .resume-layout { grid-template-columns: 1fr; gap: 0; }
   .resume-nav {
     flex-direction: row;
     flex-wrap: nowrap;
