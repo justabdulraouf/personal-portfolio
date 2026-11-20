@@ -34,7 +34,6 @@ html {
   background: var(--bg);
   color: var(--fg);
   hanging-punctuation: first last;
-  overflow-x: clip;
 }
 
 html.js-ready .reveal {
@@ -464,6 +463,8 @@ p { margin: 0; }
   from { transform: translateY(108%); filter: blur(10px); opacity: 0.4; }
   to { transform: none; filter: none; opacity: 1; }
 }
+
+main { overflow-x: clip; }
 
 /* Sections */
 
