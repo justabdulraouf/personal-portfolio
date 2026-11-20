@@ -22,6 +22,7 @@
   
   <!-- Custom Favicon & Apple Touch Icon -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="assets/profile.jpg">
   
   <!-- Open Graph / Rich Social Cards -->
@@ -29,9 +30,8 @@
   <meta property="og:description" content="Explore articles, marketing &amp; storytelling strategy, work samples, and tech insights.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://justabdulraouf.me">
+  <link rel="canonical" href="https://justabdulraouf.me/">
   <meta property="og:image" content="https://justabdulraouf.me/assets/profile.jpg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
@@ -46,10 +46,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;0,6..72,800;1,6..72,400;1,6..72,600&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
   
-  <!-- Cache Buster Version 1.2.2 -->
-  <link rel="stylesheet" href="styles.css?v=1.2.2">
+  <!-- Cache Buster Version 1.2.3 -->
+  <link rel="stylesheet" href="styles.css?v=1.2.3">
 </head>
 <body>
+
+  <a class="skip-link" href="#hero">Skip to content</a>
 
   <!-- Navigation Header -->
   <header class="site-header" id="header">
@@ -59,7 +61,7 @@
         <span class="logo-dot"></span>
       </a>
 
-      <nav class="site-nav" id="siteNav">
+      <nav class="site-nav" id="siteNav" aria-label="Primary">
         <a href="#about" class="nav-link">About</a>
         <a href="#work" class="nav-link">Work</a>
         <a href="#x-spotlight" class="nav-link">X Content</a>
@@ -71,11 +73,11 @@
           <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
           <span>Resume</span>
         </button>
-        <button id="themeToggle" class="theme-toggle" aria-label="Toggle Light/Dark Theme">
+        <button id="themeToggle" class="theme-toggle" type="button" aria-label="Switch to light theme" aria-pressed="true">
           <svg class="sun-icon icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
           <svg class="moon-icon icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
         </button>
-        <button id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Toggle Menu">
+        <button id="mobileMenuBtn" class="mobile-menu-btn" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="siteNav">
           <span></span>
           <span></span>
         </button>
@@ -372,7 +374,6 @@
                 <p lang="en" dir="ltr">i don’t think i’ll ever be the kind of person who cope from reality with jokes and by being funny, or even be the kind of poster who keep others entertained all the time, maybe i’m too serious for that? well, i always appreciate a good laugh and it get me out of the mood. or…</p>
                 &mdash; Abdul (@justabdulraouf) <a href="https://twitter.com/justabdulraouf/status/2076716952622621158?ref_src=twsrc%5Etfw">July 13, 2026</a>
               </blockquote>
-              <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
             </div>
 
             <div class="x-actions">
@@ -461,7 +462,7 @@
 
   <!-- Embedded Interactive Resume Modal (Complete Exact Data & Fixed Pills) -->
   <div class="resume-modal-overlay" id="resumeModalOverlay" aria-hidden="true">
-    <div class="resume-modal" role="dialog" aria-labelledby="resumeTitle">
+    <div class="resume-modal" role="dialog" aria-modal="true" aria-labelledby="resumeTitle">
       <div class="resume-modal-header">
         <div class="resume-modal-title-group">
           <span class="badge badge-dark">Resume</span>
@@ -485,9 +486,9 @@
           <a href="mailto:AbdulRaouf.alsbeei@gmail.com" class="contact-pill"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg> AbdulRaouf.alsbeei@gmail.com</a>
           <a href="tel:+201128839288" class="contact-pill"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg> +201128839288</a>
           <a href="https://justabdulraouf.me" target="_blank" rel="noopener" class="contact-pill"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg> justabdulraouf.me</a>
-          <a href="http://x.com/justabdulraouf" target="_blank" rel="noopener" class="contact-pill"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg> X Profile</a>
+          <a href="https://x.com/justabdulraouf" target="_blank" rel="noopener" class="contact-pill"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg> X Profile</a>
           <a href="https://www.linkedin.com/in/justabdulraouf/" target="_blank" rel="noopener" class="contact-pill"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.64 1.64 0 1 0 0-3.28 1.64 1.64 0 0 0 0 3.28m1.39 9.74v-8.37H5.07v8.37h2.78z"/></svg> LinkedIn Profile ↗</a>
-          <a href="https://ar.wikipedia.org/wiki/%D9%85%D8%B3%D8%AA%D8%AE%D8%AF%D9%85:%D8%B9%D8%A8%D8%AF%D8%A7%D9%8D%D8%B1%D8%A4%D9%88%D9%81_%D8%A7%D9%84%D8%B3%D8%A8%D9%8A%D8%B9%D9%8A" target="_blank" rel="noopener" class="contact-pill">Arabic Wikipedia Profile ↗</a>
+          <a href="https://ar.wikipedia.org/wiki/%D9%85%D8%B3%D8%AA%D8%AE%D8%AF%D9%85:%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D8%B1%D8%A4%D9%88%D9%81_%D8%A7%D9%84%D8%B3%D8%A8%D9%8A%D8%B9%D9%8A" target="_blank" rel="noopener" class="contact-pill">Arabic Wikipedia Profile ↗</a>
         </div>
 
         <!-- Bio: Who is Abdul? -->
@@ -526,10 +527,10 @@
             <div class="exp-clients" style="margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--border-subtle); font-size: 0.9rem; color: var(--text-secondary);">
               <strong style="color: var(--text-primary); display: block; margin-bottom: 0.35rem;">Client Engagements &amp; Account Management:</strong>
               <ul style="padding-left: 1.25rem; line-height: 1.6;">
-                <li><a href="http://stabraq.com" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: underline;">Stabraq.com</a> - Cairo, Egypt (Feb 2021 - Present) - Social Media &amp; Community Manager</li>
+                <li><a href="https://stabraq.com" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: underline;">Stabraq.com</a> - Cairo, Egypt (Feb 2021 - Present) - Social Media &amp; Community Manager</li>
                 <li>Alhayat Hospital - Latakia, Syria (Sep 2026 - Oct 2026) - Marketing Manager</li>
                 <li>Up Clinics - Latakia, Syria (Sep 2026 - Oct 2026) - Marketing Manager</li>
-                <li><a href="http://huda.tv" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: underline;">Huda.Tv</a> - Cairo, Egypt (June 2025 - February 2026) - Social Media Manager</li>
+                <li><a href="https://huda.tv" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: underline;">Huda.Tv</a> - Cairo, Egypt (June 2025 - February 2026) - Social Media Manager</li>
               </ul>
             </div>
           </div>
@@ -724,8 +725,8 @@
         <div class="resume-section">
           <h3 class="resume-section-title">Social Links</h3>
           <div class="resume-contact-bar" style="margin-top: 0.5rem;">
-            <a href="https://ar.wikipedia.org/wiki/%D9%85%D8%B3%D8%AA%D8%AE%D8%AF%D9%85:%D8%B9%D8%A8%D8%AF%D8%A7%D9%8D%D8%B1%D8%A4%D9%88%D9%81_%D8%A7%D9%84%D8%B3%D8%A8%D9%8A%D8%B9%D9%8A" target="_blank" rel="noopener" class="contact-pill">Check my Arabic Wikipedia Profile ↗</a>
-            <a href="http://x.com/justabdulraouf" target="_blank" rel="noopener" class="contact-pill"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg> Check my X Profile ↗</a>
+            <a href="https://ar.wikipedia.org/wiki/%D9%85%D8%B3%D8%AA%D8%AE%D8%AF%D9%85:%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D8%B1%D8%A4%D9%88%D9%81_%D8%A7%D9%84%D8%B3%D8%A8%D9%8A%D8%B9%D9%8A" target="_blank" rel="noopener" class="contact-pill">Check my Arabic Wikipedia Profile ↗</a>
+            <a href="https://x.com/justabdulraouf" target="_blank" rel="noopener" class="contact-pill"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg> Check my X Profile ↗</a>
             <a href="https://www.linkedin.com/in/justabdulraouf/" target="_blank" rel="noopener" class="contact-pill"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.64 1.64 0 1 0 0-3.28 1.64 1.64 0 0 0 0 3.28m1.39 9.74v-8.37H5.07v8.37h2.78z"/></svg> Check my LinkedIn Profile ↗</a>
           </div>
         </div>
@@ -764,7 +765,7 @@
 
   <!-- Twitter Platform Widget -->
   <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-  <!-- Cache Buster Version 1.2.2 -->
-  <script src="script.js?v=1.2.2"></script>
+  <!-- Cache Buster Version 1.2.3 -->
+  <script src="script.js?v=1.2.3"></script>
 </body>
 </html>

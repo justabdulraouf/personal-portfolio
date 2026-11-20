@@ -1,0 +1,2 @@
+# Browsers request /favicon.ico automatically; serve the existing SVG mark.
+/favicon.ico    /favicon.svg    200
