@@ -824,7 +824,9 @@ main { overflow-x: clip; }
   font-size: 0.975rem;
   font-weight: 450;
   letter-spacing: -0.015em;
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  hyphens: none;
 }
 .copy-btn,
 .contact-go {
@@ -1116,7 +1118,9 @@ body.resume-page main { overflow-x: visible; }
   .work-logo { width: 3.25rem; height: 3.25rem; }
   .hero-cta { flex-direction: column; align-items: flex-start; }
   .footer-inner { flex-direction: column; align-items: flex-start; }
-  .contact-row { align-items: flex-start; }
+  .contact-row { align-items: center; }
+  .contact-icon { width: 2.15rem; height: 2.15rem; }
+  .contact-value { font-size: 0.875rem; }
   .x-card-link, .x-card--featured .x-card-link { padding: 1.15rem 1.05rem 1.05rem; }
   .close-display { font-size: clamp(2.6rem, 16vw, 4.2rem); }
 }
